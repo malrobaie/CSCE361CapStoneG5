@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Group5OnlineStore", "Group5OnlineStore\Group5OnlineStore.csproj", "{768627DA-5E61-4F4D-897A-90F2E4EF1CBD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Group5OnlineStore", "Group5OnlineStore\Group5OnlineStore.csproj", "{768627DA-5E61-4F4D-897A-90F2E4EF1CBD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataContainers", "DataContracts\DataContainers.csproj", "{A3DF211E-A948-4945-8A35-10ADC729522C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{768627DA-5E61-4F4D-897A-90F2E4EF1CBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{768627DA-5E61-4F4D-897A-90F2E4EF1CBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{768627DA-5E61-4F4D-897A-90F2E4EF1CBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3DF211E-A948-4945-8A35-10ADC729522C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3DF211E-A948-4945-8A35-10ADC729522C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3DF211E-A948-4945-8A35-10ADC729522C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3DF211E-A948-4945-8A35-10ADC729522C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

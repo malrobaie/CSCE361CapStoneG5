@@ -1,5 +1,5 @@
-﻿using Duende.IdentityServer.EntityFramework.Options;
-using Group5OnlineStore.Models;
+﻿using DataContainers;
+using Duende.IdentityServer.EntityFramework.Options;
 using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
