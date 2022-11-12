@@ -2,7 +2,24 @@
 
 namespace DataContainers
 {
+    public class Customer
+    {
+        public long CustomerId {get; set; }
 
+        public string Name {get; set; }
+
+        public string Email {get; set; }
+        
+        public string? Phone {get; set; }
+        
+        public Address? Address {get; set; }
+        
+        public int? CreditCard {get; set; }
+        
+        public List<Order>? OrderHistory {get; set; }
+        
+        public List<Product>? Cart {get; set; }
+    }
     public class Address
     {
         public int Number {get; set; }
@@ -81,28 +98,6 @@ namespace DataContainers
     
     public class ApplicationUser : IdentityUser
     {
-        [PersonalData]
-        public long CustomerId {get; set; }
-
-        [PersonalData]
-        public string Name {get; set; }
-
-        [PersonalData]
-        public string Email {get; set; }
         
-        [PersonalData]
-        public string? Phone {get; set; }
-        
-        [PersonalData]
-        public Address? Address {get; set; }
-        
-        [PersonalData]
-        public int? CreditCard {get; set; }
-        
-        [PersonalData]
-        public List<Order>? OrderHistory {get; set; }
-        
-        [PersonalData]
-        public List<Product>? Cart {get; set; }
     }
 }
