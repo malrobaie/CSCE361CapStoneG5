@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 
 namespace DataContainers
 {
@@ -6,17 +7,17 @@ namespace DataContainers
     {
         public long CustomerId {get; set; }
 
-        public string Name {get; set; }
+        public string LastName { get; set; }
+
+        public string FirstName { get; set; }
+
+        public string Password {get; set; }
 
         public string Email {get; set; }
         
-        public string? Phone {get; set; }
-        
         public Address? Address {get; set; }
         
-        public int? CreditCard {get; set; }
-        
-        public List<Order>? OrderHistory {get; set; }
+        public List<CreditCard>? PaymentMethods {get; set; }
         
         public List<Product>? Cart {get; set; }
     }
@@ -35,15 +36,6 @@ namespace DataContainers
         public string? Country {get; set; }
     }
 
-    public class Order
-    {
-        public int OrderId {get; set; }
-
-        public List<Product>? Products {get; set; }
-
-        public DateOnly Date {get; set;}
-    }
-
     public class Product
     {
         public int ProductId {get; set; }
@@ -58,7 +50,7 @@ namespace DataContainers
 
         public double? Rating {get; set; }
 
-        public Dimensions? Dimentions {get; set; }
+        public Dimensions? Dimensions {get; set; }
 
         public string? SKU {get; set; }
 
@@ -95,7 +87,23 @@ namespace DataContainers
 
         public List<Product>? Products {get; set; }
     }
-    
+
+    public class CreditCard
+    {
+        public int CreditId {get;}
+
+        public string CreditName {get;}
+        
+        public string CreditType {get;}
+        
+        public DateOnly ExperationDate {get; set; }
+
+        public CreditCardAttribute CreditNumber {get;}
+
+        public int? CVV {get; set;}
+
+    }
+
     public class ApplicationUser : IdentityUser
     {
         
