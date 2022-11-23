@@ -101,7 +101,8 @@ create table Product (
 
 -- This table is a join table between products and a user's shopping cart
 create table CartProduct (
-    cartProductId int IDENTITY(1,1) PRIMARY KEY NOT NULL
+    cartProductId int IDENTITY(1,1) PRIMARY KEY NOT NULL,
+    quantity int NOT NULL
 );
 
 -- Add in foreign key references
@@ -110,5 +111,14 @@ alter table CartProduct
 
 alter table CartProduct
     add productId int REFERENCES Product(productId);
+
+-- This table models a sale on different products
+create table Sale(
+    saleId int IDENTITY(1,1) PRIMARY KEY NOT NULL,
+    startDate date NOT NULL,
+    endDate date NOT NULL,
+    discount float NOT NULL,
+    productCategory varchar(255) NOT NULL
+);
 
 GO
