@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\malro\\Source\\Repos\\CSCE361CapStoneG5\\DataContracts\\DataContainers.csproj": {}
+    "C:\\Users\\malro\\source\\repos\\CSCE361CapStoneG5\\DataContracts\\DataContainers.csproj": {}
   },
   "projects": {
-    "C:\\Users\\malro\\Source\\Repos\\CSCE361CapStoneG5\\DataContracts\\DataContainers.csproj": {
+    "C:\\Users\\malro\\source\\repos\\CSCE361CapStoneG5\\DataContracts\\DataContainers.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\malro\\Source\\Repos\\CSCE361CapStoneG5\\DataContracts\\DataContainers.csproj",
+        "projectUniqueName": "C:\\Users\\malro\\source\\repos\\CSCE361CapStoneG5\\DataContracts\\DataContainers.csproj",
         "projectName": "DataContainers",
-        "projectPath": "C:\\Users\\malro\\Source\\Repos\\CSCE361CapStoneG5\\DataContracts\\DataContainers.csproj",
+        "projectPath": "C:\\Users\\malro\\source\\repos\\CSCE361CapStoneG5\\DataContracts\\DataContainers.csproj",
         "packagesPath": "C:\\Users\\malro\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\malro\\Source\\Repos\\CSCE361CapStoneG5\\DataContracts\\obj\\",
         "projectStyle": "PackageReference",

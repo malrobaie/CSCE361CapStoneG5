@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6s+0UWY4GrUrqBCcCREgivIYrozAGzbdioazlCFGf1NyuMtBRRiDdZiJjMtRICq7p6e4AMrQMsZCgMBps6MlLw==",
+  "dgSpecHash": "UWXJtvRSVLpA4JmexD7ONco+H3pUIoVGfbvh1xBGsiMgYQu32LKVIFq8aVL/VIfGUkCcCClh5GCD6k0bETzapg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\malro\\Source\\Repos\\CSCE361CapStoneG5\\DataContracts\\DataContainers.csproj",
+  "projectFilePath": "C:\\Users\\malro\\source\\repos\\CSCE361CapStoneG5\\DataContracts\\DataContainers.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\malro\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\malro\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
