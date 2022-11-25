@@ -43,11 +43,12 @@
 }
 .searchBar input {
   background-color: white;
-  border-color: lightgray;
-  border-radius: 2px;
+  border-color: rgb(146, 158, 246);
+  border-radius: 8px;
   position: absolute;
   left: 20%;
   width: 500px;
   height: 30px;  
+  font-size: 15px;
  
 }
