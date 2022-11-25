@@ -32,7 +32,22 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.searchBar{
+  margin-top: 0px
+}
+.searchBar input {
+  background-color: white;
+  border-color: lightgray;
+  border-radius: 2px;
+  position: absolute;
+  left: 20%;
+  width: 500px;
+  height: 30px;  
+ 
 }
