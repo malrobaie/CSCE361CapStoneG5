@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\DataContracts\\DataContainers.csproj": {}
+    "C:\\Users\\malro\\source\\repos\\CSCE361CapStoneG5\\DataContracts\\DataContainers.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\DataContracts\\DataContainers.csproj": {
+    "C:\\Users\\malro\\source\\repos\\CSCE361CapStoneG5\\DataContracts\\DataContainers.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\DataContracts\\DataContainers.csproj",
+        "projectUniqueName": "C:\\Users\\malro\\source\\repos\\CSCE361CapStoneG5\\DataContracts\\DataContainers.csproj",
         "projectName": "DataContainers",
-        "projectPath": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\DataContracts\\DataContainers.csproj",
-        "packagesPath": "C:\\Users\\jeffl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\DataContracts\\obj\\",
+        "projectPath": "C:\\Users\\malro\\source\\repos\\CSCE361CapStoneG5\\DataContracts\\DataContainers.csproj",
+        "packagesPath": "C:\\Users\\malro\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\malro\\Source\\Repos\\CSCE361CapStoneG5\\DataContracts\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\jeffl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\malro\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -70,7 +70,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
