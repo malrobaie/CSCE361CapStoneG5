@@ -1,2 +1,4 @@
 C:\Users\malro\Source\Repos\CSCE361CapStoneG5\reactShoppingCart\obj\Debug\reactShoppingCart.esproj.SuggestedBindingRedirects.cache
 C:\Users\malro\Source\Repos\CSCE361CapStoneG5\reactShoppingCart\obj\Debug\reactShoppingCart.esproj.CoreCompileInputs.cache
+C:\Users\jeffl\Source\Repos\CSCE361CapStoneG5\reactShoppingCart\obj\Debug\reactShoppingCart.esproj.SuggestedBindingRedirects.cache
+C:\Users\jeffl\Source\Repos\CSCE361CapStoneG5\reactShoppingCart\obj\Debug\reactShoppingCart.esproj.CoreCompileInputs.cache
