@@ -10,5 +10,11 @@ namespace Tools
             return con;
         }
 
+        public static string GetID(string type, string table, string identifier)
+        {
+            string SQLText = "SELECT " + type + "Id FROM " + table + " WHERE (" + type + " = '" + identifier + "')";
+            return SQLText;
+        }
+
     }
 }

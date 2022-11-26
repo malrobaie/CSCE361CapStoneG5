@@ -13,3 +13,5 @@ C:\Users\jeffl\source\repos\CSCE361CapStoneG5\Accessors\obj\Debug\net6.0\Accesso
 C:\Users\jeffl\source\repos\CSCE361CapStoneG5\Accessors\obj\Debug\net6.0\refint\Accessors.dll
 C:\Users\jeffl\source\repos\CSCE361CapStoneG5\Accessors\obj\Debug\net6.0\Accessors.pdb
 C:\Users\jeffl\source\repos\CSCE361CapStoneG5\Accessors\obj\Debug\net6.0\ref\Accessors.dll
+C:\Users\jeffl\Source\Repos\CSCE361CapStoneG5\Accessors\bin\Debug\net6.0\DataContainers.dll
+C:\Users\jeffl\Source\Repos\CSCE361CapStoneG5\Accessors\bin\Debug\net6.0\DataContainers.pdb
