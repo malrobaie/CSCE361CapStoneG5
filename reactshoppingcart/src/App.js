@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import './App.css';
-import Search from "./Components/Search"
-//import products data
+import Navbar from './Components/Navbar'
+import Home from './Components/Home';
 
 export default function App() {
     return (
-        <div>
-            <h1>ecart</h1>
-            <Search />
-        </div>
+        <>
+        <Navbar />
+        <Home />
+        </>
     );
 }

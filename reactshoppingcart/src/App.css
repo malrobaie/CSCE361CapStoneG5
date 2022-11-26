@@ -38,16 +38,15 @@
   }
 }
 
-.searchBar{
-  margin-top: 0px
-}
-.searchBar input {
+.d-flex {
   background-color: white;
-  border-color: lightgray;
-  border-radius: 2px;
-  position: absolute;
+  border-color: rgb(146, 158, 246);
+  border-width: 5px;
+  place-items: center;
   left: 20%;
-  width: 500px;
-  height: 30px;  
- 
+  width: 600px;
+}
+
+.navbar-expand-lg {
+  color: F5F5F5;
 }
