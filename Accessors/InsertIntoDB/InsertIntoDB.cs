@@ -1,64 +1,29 @@
 ﻿using Accessors.PullFromDB;
 using DataContainers;
 using System.Data.SqlClient;
-using Tools;
 
 namespace Accessors.InsertIntoDB
 {
-    public interface ICreateCustomer
-    {
-        public void Create(Customer customer);
-    }
-
-    public class CreateCustomer : ICreateCustomer
-    {
-        public void Create(Customer customer)
-        {
-            using (SqlConnection con = DBTools.ConnectToDB())
-            {
-                con.Open();
-                try
-                {
-                    InsertCountry.Insert("Japan", con);
-                }catch(Exception ex)
-                {
-                    
-                }
-                con.Close();
-            }
-        }
-    }
-
-    public class UpdateCart
-    {
-        public void Update()
-        {
-            throw new NotImplementedException();
-        }
-    }
-
-    public interface IInsert 
+    public interface IInsert<in T> where T : class
     {
         /**
             * in an open SQL connection (con), this opens a command, adds the command text to insert the given element into the database, does not check if it is already present.
             */
-        public static string Insert(object obj, SqlConnection con) 
-        { 
-            return "";
-        }
+        public string? Insert(T obj, SqlConnection con);
     }
 
-    public class InsertCountry : IInsert
+    public class InsertCountry : IInsert<string>
     {
         /**
             * in an open SQL connection (con), this opens a command, adds the command text to insert the given element into the database, does not check if it is already present.
             * returns the string representation of the new Id from the insert.
             */
-        public static string Insert(string country, SqlConnection con)
+
+        public string? Insert(string country, SqlConnection con)
         {
             using (SqlCommand cmd = con.CreateCommand())
             {
-                string countryId = null;
+                string? countryId = null;
                 cmd.CommandText = "insert into [Country] (country) values (@country);" +
                                     "SELECT countryId FROM Country WHERE countryId = SCOPE_IDENTITY();";
                 cmd.Parameters.AddWithValue("@country", country);
@@ -74,17 +39,17 @@ namespace Accessors.InsertIntoDB
         }
     }
 
-    public class InsertState : IInsert
+    public class InsertState : IInsert<string>
     {
         /**
-            * in an open SQL connection (con), this opens a command, adds the command text to insert the given element into the database, does not check if it is already present.
-            * returns the string representation of the new Id from the insert.
-            */
-        public static string Insert(string state, SqlConnection con)
+        * in an open SQL connection (con), this opens a command, adds the command text to insert the given element into the database, does not check if it is already present.
+        * returns the string representation of the new Id from the insert.
+        */
+        public string? Insert(string state, SqlConnection con)
         {
             using (SqlCommand cmd = con.CreateCommand())
             {
-                string stateId = null;
+                string? stateId = null;
                 cmd.CommandText = "insert into [State] (state) values (@state);" +
                                     "SELECT stateId FROM State WHERE stateId = SCOPE_IDENTITY();";
                 cmd.Parameters.AddWithValue("@state", state);
@@ -100,25 +65,29 @@ namespace Accessors.InsertIntoDB
         }
     }
 
-    public class InsertAddress : IInsert
+    public class InsertAddress : IInsert<Address>
     {
         /**
             * in an open SQL connection (con), this opens a command, adds the command text to insert the given element into the database, does not check if it is already present.
             * returns the string representation of the new Id from the insert.
             */
-        public static string Insert(Address address, SqlConnection con)
+        public string? Insert(Address address, SqlConnection con)
         {
-            string addressId = null;
-            string countryId = GetCountryId.Get(address.Country, con);
+            var getCountry = new GetCountryId();
+            var getState = new GetStateId();
+            var insertCountry =  new InsertCountry();
+            var insertState = new InsertState();
+            string? addressId = null;
+            string? countryId = getCountry.Get(address.Country, con);
             if (countryId == null)
             {
-                countryId = InsertCountry.Insert(address.Country, con);
+                countryId = insertCountry.Insert(address.Country, con);
             }
 
-            string stateId = GetStateId.Get(address.State, con);
+            string? stateId = getState.Get(address.State, con);
             if (stateId == null)
             {
-                stateId = InsertState.Insert(address.State, con);
+                stateId = insertState.Insert(address.State, con);
             }
 
             using (SqlCommand cmd = con.CreateCommand())
@@ -140,6 +109,41 @@ namespace Accessors.InsertIntoDB
             }
 
             return addressId;
+        }
+    }
+
+    public class InsertCustomer : IInsert<Customer>
+    {
+        public string? Insert(Customer customer, SqlConnection con)
+        {
+            
+            var getAddress = new GetAddressId();
+            var insertAddress = new InsertAddress();
+            string? customerId = null;
+            string? addressId = getAddress.Get(customer.Address, con);
+            if(addressId == null)
+            {
+                addressId = insertAddress.Insert(customer.Address, con);
+            }
+
+            using (SqlCommand cmd = con.CreateCommand())
+            {
+                cmd.CommandText = "insert into Customer (lastName, firstName, addressId) values (@lastName, @firstName, @addressId);" +
+                                    "SELECT CustomerId FROM Customer WHERE customerId = SCOPE_IDENTITY();";
+                cmd.Parameters.AddWithValue("@lastName", customer.LastName);
+                cmd.Parameters.AddWithValue("@firstName", customer.FirstName);
+                cmd.Parameters.AddWithValue("@addressId", int.Parse(addressId));
+           
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while(reader.Read())
+                    {
+                        customerId = reader["customerId"].ToString();
+                    }
+                }
+            }
+
+            return customerId;
         }
     }
 }

@@ -51,6 +51,16 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
+          "dependencies": {
+            "FontAwesome": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            },
+            "HT.Components": {
+              "target": "Package",
+              "version": "[6.0.6, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -112,13 +122,21 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "FontAwesome": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            },
+            "HT.Components": {
+              "target": "Package",
+              "version": "[6.0.6, )"
+            },
             "Microsoft.AspNetCore.Identity": {
               "target": "Package",
               "version": "[2.2.0, )"
             },
             "Microsoft.Extensions.Identity.Stores": {
               "target": "Package",
-              "version": "[6.0.10, )"
+              "version": "[7.0.0, )"
             }
           },
           "imports": [
@@ -189,6 +207,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "FontAwesome": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            },
+            "HT.Components": {
+              "target": "Package",
+              "version": "[6.0.6, )"
+            },
             "MSTest.TestAdapter": {
               "target": "Package",
               "version": "[2.2.10, )"
@@ -203,11 +229,13 @@
             },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[17.3.2, )"
+              "version": "[17.4.0, )"
             },
             "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[3.1.2, )"
+              "version": "[3.2.0, )"
             }
           },
           "imports": [
@@ -271,6 +299,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "FontAwesome": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            },
+            "HT.Components": {
+              "target": "Package",
+              "version": "[6.0.6, )"
+            },
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.5, )"

@@ -178,3 +178,13 @@ C:\Users\jeffl\Source\Repos\CSCE361CapStoneG5\Tests\obj\Debug\net6.0\refint\Test
 C:\Users\jeffl\Source\Repos\CSCE361CapStoneG5\Tests\obj\Debug\net6.0\Tests.pdb
 C:\Users\jeffl\Source\Repos\CSCE361CapStoneG5\Tests\obj\Debug\net6.0\Tests.genruntimeconfig.cache
 C:\Users\jeffl\Source\Repos\CSCE361CapStoneG5\Tests\obj\Debug\net6.0\ref\Tests.dll
+C:\Users\jeffl\Source\Repos\CSCE361CapStoneG5\Tests\bin\Debug\net6.0\HT.Components.dll
+C:\Users\jeffl\Source\Repos\CSCE361CapStoneG5\Tests\bin\Debug\net6.0\HT.Core.dll
+C:\Users\jeffl\Source\Repos\CSCE361CapStoneG5\Tests\bin\Debug\net6.0\HT.Encrypt.dll
+C:\Users\jeffl\Source\Repos\CSCE361CapStoneG5\Tests\bin\Debug\net6.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\jeffl\Source\Repos\CSCE361CapStoneG5\Tests\bin\Debug\net6.0\Microsoft.AspNetCore.Components.dll
+C:\Users\jeffl\Source\Repos\CSCE361CapStoneG5\Tests\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Forms.dll
+C:\Users\jeffl\Source\Repos\CSCE361CapStoneG5\Tests\bin\Debug\net6.0\Microsoft.AspNetCore.Components.Web.dll
+C:\Users\jeffl\Source\Repos\CSCE361CapStoneG5\Tests\bin\Debug\net6.0\Microsoft.AspNetCore.Metadata.dll
+C:\Users\jeffl\Source\Repos\CSCE361CapStoneG5\Tests\bin\Debug\net6.0\Microsoft.JSInterop.dll
+C:\Users\jeffl\Source\Repos\CSCE361CapStoneG5\Tests\bin\Debug\net6.0\System.IO.Pipelines.dll
