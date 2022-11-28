@@ -6,7 +6,7 @@ namespace Tools
     {
         public static SqlConnection ConnectToDB()
         {
-            SqlConnection con = new("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Group5;Integrated Security=True");
+            SqlConnection con = new("Data Source=localhost\\SQLEXPRESS;Initial Catalog=master;Integrated Security=True");
             return con;
         }
 

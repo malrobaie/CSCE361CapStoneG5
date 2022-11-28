@@ -16,7 +16,7 @@ namespace DataContainers
         
         public List<CreditCard>? PaymentMethods {get; set; }
         
-        public List<Product>? Cart {get; set; }
+        public Dictionary<Product, int>? Cart {get; set; }
     }
 
     public class Address
@@ -36,13 +36,15 @@ namespace DataContainers
     {
         public string Name {get; set; }
 
+        public double Price {get; set; }
+
         public string? Description {get; set; }
 
         public string? ManufacturerInfo {get; set; }
 
-        public double? Weight {get; set; }
+        //public double? Weight {get; set; }
 
-        public double? Rating {get; set; }
+        //public double? Rating {get; set; }
 
         public Dimensions? Dimensions {get; set; }
 
@@ -50,7 +52,7 @@ namespace DataContainers
 
         public string? Category {get; set; }
 
-        public List<string>? Images {get; set; }
+        //public List<string>? Images {get; set; }
 
         public Sale? Sale {get; set; }
 
@@ -58,7 +60,7 @@ namespace DataContainers
 
     public class Dimensions
     {
-        public double Length {get; set; }
+        public double Depth {get; set; }
 
         public double Height {get; set; }
 
@@ -67,7 +69,7 @@ namespace DataContainers
 
     public class Sale
     {
-        public double? DiscountAmount {get; set; }
+        //public double? DiscountAmount {get; set; }
 
         public double? DiscountPercent {get; set; }
 
@@ -77,7 +79,7 @@ namespace DataContainers
 
         public DateOnly EndDate {get; set; }
 
-        public List<Product>? Products {get; set; }
+        //public List<Product>? Products {get; set; }
     }
 
     public class CreditCard

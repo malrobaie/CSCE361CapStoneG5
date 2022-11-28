@@ -1,25 +1,17 @@
 ﻿using Accessors.PullFromDB;
 using DataContainers;
-using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Accessors.RemoveFromDB
 {
-    public interface IRemove
+    public interface IRemove<in T> where T : class
         {
-            public static int Remove(object var, SqlConnection con) 
-            {
-                return 0;
-            }
+            public int Remove(T var, SqlConnection con);
         }
 
-    public class RemoveCountry : IRemove
+    public class RemoveCountry : IRemove<string>
         {
-            public static int Remove(String country, SqlConnection con)
+            public int Remove(string country, SqlConnection con)
             {
                 using (SqlCommand cmd = con.CreateCommand())
                 {
@@ -31,9 +23,9 @@ namespace Accessors.RemoveFromDB
             }
         }
 
-    public class RemoveState : IRemove
+    public class RemoveState : IRemove<string>
         {
-            public static int Remove(String state, SqlConnection con)
+            public int Remove(string state, SqlConnection con)
             {
                 using (SqlCommand cmd = con.CreateCommand())
                 {
@@ -45,17 +37,33 @@ namespace Accessors.RemoveFromDB
             }
         }
 
-    public class RemoveAddress : IRemove
+    public class RemoveAddress : IRemove<Address>
     {
-        public static int Remove(Address address, SqlConnection con)
+        public int Remove(Address address, SqlConnection con)
+        {
+            using (SqlCommand cmd = con.CreateCommand())
             {
-                using (SqlCommand cmd = con.CreateCommand())
-                {
-                    cmd.CommandText = "DELETE FROM [Address] WHERE (addressId = @addressId);";
-                    cmd.Parameters.AddWithValue("@addressId", GetAddressId.Get(address, con));
-                    return cmd.ExecuteNonQuery();
-                }
-            
+                var getAddress = new GetAddressId();
+                cmd.CommandText = "DELETE FROM [Address] WHERE (addressId = @addressId);";
+                cmd.Parameters.AddWithValue("@addressId", getAddress.Get(address, con));
+                return cmd.ExecuteNonQuery();
             }
+            
+        }
+    }
+
+    public class RemoveCustomer : IRemove<Customer>
+    {
+        public int Remove(Customer customer, SqlConnection con)
+        {
+            using (SqlCommand cmd = con.CreateCommand())
+            {
+                var getCustomer = new GetCustomerId();
+                cmd.CommandText = "DELETE FROM [Customer] WHERE (customerId = @customerId);";
+                cmd.Parameters.AddWithValue("@customerId", getCustomer.Get(customer, con));
+                return cmd.ExecuteNonQuery();
+            }
+            
+        }
     }
 }

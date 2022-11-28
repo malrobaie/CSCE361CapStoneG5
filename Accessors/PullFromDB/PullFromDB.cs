@@ -1,28 +1,20 @@
 ﻿using DataContainers;
-using System;
-using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Accessors.PullFromDB
 {
-    public interface IGet
+    public interface IGet<in T> where T : class
         {
-            public static string Get(object var, SqlConnection con)
-            {
-                return "";
-            } 
+            public string? Get(T var, SqlConnection con);
         }
 
-    public class GetStateId : IGet
+    public class GetStateId : IGet<string>
         {
-            public static string Get(string state, SqlConnection con)
+            public string? Get(string state, SqlConnection con)
             {
                 using (SqlCommand cmd = con.CreateCommand())
                 {
-                    string stateId = null;
+                    string? stateId = null;
                     cmd.CommandText = "SELECT stateId FROM State WHERE (state = @state);";
                     cmd.Parameters.AddWithValue("@state", state);
                     using (SqlDataReader reader = cmd.ExecuteReader())
@@ -37,13 +29,13 @@ namespace Accessors.PullFromDB
             }
         }
 
-    public class GetCountryId : IGet
+    public class GetCountryId : IGet<string>
         {
-            public static string Get(string country, SqlConnection con)
+            public string? Get(string country, SqlConnection con)
             {
                 using (SqlCommand cmd = con.CreateCommand())
                 {
-                    string countryId = null;
+                    string? countryId = null;
                     cmd.CommandText = "SELECT countryId FROM Country WHERE (country = @country);";
                     cmd.Parameters.AddWithValue("@country", country);
                     using (SqlDataReader reader = cmd.ExecuteReader())
@@ -58,27 +50,55 @@ namespace Accessors.PullFromDB
             }
         }
 
-    public class GetAddressId : IGet
+    public class GetAddressId : IGet<Address>
     {
-        public static string Get(Address address, SqlConnection con)
+        public string? Get(Address address, SqlConnection con)
+        {
+            using (SqlCommand cmd = con.CreateCommand())
             {
-                using (SqlCommand cmd = con.CreateCommand())
+                var x = new GetCountryId();
+                var y = new GetStateId();
+                string? addressId = null;
+                cmd.CommandText = "SELECT addressId FROM Address WHERE (street = @street) and (city = @city) and (stateId = @stateId) and (countryId = @countryId);";
+                cmd.Parameters.AddWithValue("@countryId", int.Parse(x.Get(address.Country, con)));
+                cmd.Parameters.AddWithValue("@stateId", int.Parse(y.Get(address.State, con)));
+                cmd.Parameters.AddWithValue("@city", address.City);
+                cmd.Parameters.AddWithValue("@street", address.Street);
+                using (SqlDataReader reader = cmd.ExecuteReader())
                 {
-                    string addressId = null;
-                    cmd.CommandText = "SELECT addressId FROM Address WHERE (street = @street) and (city = @city) and (stateId = @stateId) and (countryId = @countryId);";
-                    cmd.Parameters.AddWithValue("@countryId", int.Parse(GetCountryId.Get(address.Country, con)));
-                    cmd.Parameters.AddWithValue("@stateId", int.Parse(GetStateId.Get(address.State, con)));
-                    cmd.Parameters.AddWithValue("@city", address.City);
-                    cmd.Parameters.AddWithValue("@street", address.Street);
-                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    while(reader.Read())
                     {
-                        while(reader.Read())
-                        {
-                            addressId = reader["addressId"].ToString();
-                        }
+                        addressId = reader["addressId"].ToString();
                     }
-                    return addressId;
                 }
+                return addressId;
             }
+        }
+    }
+
+    public class GetCustomerId : IGet<Customer>
+    {
+        public string? Get(Customer customer, SqlConnection con)
+        {
+            using (SqlCommand cmd = con.CreateCommand())
+            {
+                var getAddress = new GetAddressId();
+                string? customerId = null;
+                cmd.CommandText = "SELECT customerId FROM Customer WHERE (lastName = @lastName) and " +
+                                    "(firstName = @firstName) and (addressId = @addressId) and (email = @email);";
+                cmd.Parameters.AddWithValue("@lastName", customer.LastName);
+                cmd.Parameters.AddWithValue("@firstName", customer.FirstName);
+                cmd.Parameters.AddWithValue("@addressId", int.Parse(getAddress.Get(customer.Address, con)));
+                cmd.Parameters.AddWithValue("@email", customer.Email);
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while(reader.Read())
+                    {
+                        customerId = reader["customerId"].ToString();
+                    }
+                }
+                return customerId;
+            }
+        }
     }
 }
