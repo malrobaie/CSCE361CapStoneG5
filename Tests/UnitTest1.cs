@@ -81,15 +81,18 @@ namespace Tests
             {
                 var inCustomer = new InsertCustomer();
                 Address address= new Address();
-                address.City = "Palmyra";
-                address.Country = "US";
-                address.State = "Nebraska";
-                address.ZipCode = "68418";
-                address.Street = "700 A Street";
                 Customer customer = new Customer();
+
+                address.City = "Lincoln";
+                address.Country = "US";
+                address.State = "Illinois";
+                address.ZipCode = "68524";
+                address.Street = "23 Lotheville Road";
+
                 customer.Address = address;
-                customer.LastName = "Church";
-                customer.FirstName = "Jeffrey";
+                customer.LastName = "Shrubsall";
+                customer.FirstName = "Trudey";
+                customer.Email = "tshrubsall2@sitemeter.com";
 
                 con.Open();
                 try
@@ -174,6 +177,7 @@ namespace Tests
                 customer.Address = address;
                 customer.LastName = "Church";
                 customer.FirstName = "Megan";
+                customer.Email = "mc@test.com";
 
                 con.Open();
                 Assert.IsNotNull(inCustomer.Insert(customer, con));
@@ -241,15 +245,16 @@ namespace Tests
                 Customer customer = new Customer();
                 Address address= new Address();
 
-                address.City = "Palmyra";
+                address.City = "Lincoln";
                 address.Country = "US";
-                address.State = "Nebraska";
-                address.ZipCode = "68418";
-                address.Street = "700 A Street";
+                address.State = "Illinois";
+                address.ZipCode = "68524";
+                address.Street = "23 Lotheville Road";
 
                 customer.Address = address;
-                customer.LastName = "Church";
-                customer.FirstName = "Jeffrey";
+                customer.LastName = "Shrubsall";
+                customer.FirstName = "Trudey";
+                customer.Email = "tshrubsall2@sitemeter.com";
 
                 con.Open();
                 Assert.IsNotNull(getCustomerId.Get(customer, con));

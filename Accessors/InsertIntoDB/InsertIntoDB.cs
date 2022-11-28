@@ -128,11 +128,12 @@ namespace Accessors.InsertIntoDB
 
             using (SqlCommand cmd = con.CreateCommand())
             {
-                cmd.CommandText = "insert into Customer (lastName, firstName, addressId) values (@lastName, @firstName, @addressId);" +
+                cmd.CommandText = "insert into Customer (lastName, firstName, addressId, email) values (@lastName, @firstName, @addressId, @email);" +
                                     "SELECT CustomerId FROM Customer WHERE customerId = SCOPE_IDENTITY();";
                 cmd.Parameters.AddWithValue("@lastName", customer.LastName);
                 cmd.Parameters.AddWithValue("@firstName", customer.FirstName);
                 cmd.Parameters.AddWithValue("@addressId", int.Parse(addressId));
+                cmd.Parameters.AddWithValue("@email", customer.Email);
            
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {

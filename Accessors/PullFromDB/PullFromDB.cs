@@ -85,10 +85,11 @@ namespace Accessors.PullFromDB
                 var getAddress = new GetAddressId();
                 string? customerId = null;
                 cmd.CommandText = "SELECT customerId FROM Customer WHERE (lastName = @lastName) and " +
-                                    "(firstName = @firstName) and (addressId = @addressId);";
+                                    "(firstName = @firstName) and (addressId = @addressId) and (email = @email);";
                 cmd.Parameters.AddWithValue("@lastName", customer.LastName);
                 cmd.Parameters.AddWithValue("@firstName", customer.FirstName);
                 cmd.Parameters.AddWithValue("@addressId", int.Parse(getAddress.Get(customer.Address, con)));
+                cmd.Parameters.AddWithValue("@email", customer.Email);
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
                     while(reader.Read())
