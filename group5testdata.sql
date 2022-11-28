@@ -20,11 +20,11 @@ insert into Address(street,city,zipCode,stateId,countryId) values ('660 Rowland 
 insert into Address(street,city,zipCode,stateId,countryId) values ('1099 Barnett Avenue','Columbus', '43204', 5, 1);
 
 -- Insert test customer
-insert into Customer(lastName, firstName, addressId) values ('Shrubsall', 'Trudey', 1);
-insert into Customer(lastName, firstName, addressId) values ('Blakeston', 'Millard', 2);
-insert into Customer(lastName, firstName, addressId) values ('Dellenbrook', 'Bobine', 3);
-insert into Customer(lastName, firstName, addressId) values ('Arondel', 'Nick', 4);
-insert into Customer(lastName, firstName, addressId) values ('Abbey', 'Jennilee', 5);
+insert into Customer(lastName, firstName, addressId, email) values ('Shrubsall', 'Trudey', 1, 'tshrubsall2@sitemeter.com');
+insert into Customer(lastName, firstName, addressId, email) values ('Blakeston', 'Millard', 2, 'mblakeston@businessinsider.com');
+insert into Customer(lastName, firstName, addressId, email) values ('Dellenbrook', 'Bobine', 3, 'dellenbrook3@yahoo.com');
+insert into Customer(lastName, firstName, addressId, email) values ('Arondel', 'Nick', 4, 'bm@ibm.com');
+insert into Customer(lastName, firstName, addressId, email) values ('Abbey', 'Jennilee', 5, 'jennileea@cse.unl.edu');
 
 -- Insert test cart
 insert into Cart(customerId) values (1);
@@ -32,14 +32,6 @@ insert into Cart(customerId) values (2);
 insert into Cart(customerId) values (3);
 insert into Cart(customerId) values (4);
 insert into Cart(customerId) values (5);
-
--- Insert test email
-insert into Email(email, customerId) values ('tshrubsall2@sitemeter.com', 1)
-insert into Email(email, customerId) values ('mblakeston@businessinsider.com', 2);
-insert into Email(email, customerId) values ('dellenbrook3@yahoo.com', 3);
-insert into Email(email, customerId) values ('bm@ibm.com', 4);
-insert into Email(email, customerId) values ('jennileea@cse.unl.edu', 5);
-insert into Email(email, customerId) values ('jenileea@unl.edu', 5);
 
 -- Insert test credit card
 insert into CreditCard(creditName, creditType, creditNumber, cvc, expDate, customerId) values ('Trudey''s American Express Card', 'amex', '372301652498256', '342', '2025-12-09', 1);
