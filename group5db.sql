@@ -5,7 +5,6 @@
 drop table if exists CartProduct;
 drop table if exists Product;
 drop table if exists CreditCard;
-drop table if exists Email;
 drop table if exists Cart;
 drop table if exists Customer;
 drop table if exists Address;
