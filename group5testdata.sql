@@ -50,6 +50,10 @@ insert into Product(productName, productCategory, productPrice, manufacturerName
 insert into Product(productName, productCategory, productPrice, manufacturerName, productDescription, productHeight, productWidth, productDepth, productSKU) values ('Prada 55WS', 'Fashion', 369.99, 'EssilorLuxottica', 'Polarized universal fit sunglasses', 2, 7, 0.1, 'ngadg8');
 insert into Product(productName, productCategory, productPrice, manufacturerName, productDescription, productHeight, productWidth, productDepth, productSKU) values ('Razer Blade 14', 'Trending', 1999.99, 'Razer', 'Our most powerful 14-inch gaming laptop is back and more powerful than ever before.',
 12.59, 8.66, 0.66, '8tcnnw');
+insert into Product(productName, productCategory, productPrice, manufacturerName, productDescription, productHeight, productWidth, productDepth, productSKU) values ('Intel Core i5-13600KF', 'Tech', 309.99, 'Intel', 
+'Performance hybrid architecture integrates two core microarchitectures, prioritizing and distributing workloads to optimize performance', 9.17, 4.65, 4.21, '24fwaf');
+insert into Product(productName, productCategory, productPrice, manufacturerName, productDescription, productHeight, productWidth, productDepth, productSKU) values ('The Ugly Christmas Sweater Company Holiday Ugly Xmas Crew Sweaters for Men', 'Trending', 59.99, 'The Ugly Christmas Sweater Company', 
+'100% cotton, imported', 10, 12, 2, '4df2s');
 
 -- Insert test products in a cart
 insert into CartProduct(quantity, cartId, productId) values (3, 1, 1);
@@ -63,4 +67,5 @@ insert into CartProduct(quantity, cartId, productId) values (2, 4, 4);
 insert into CartProduct(quantity, cartId, productId) values (1, 5, 1);
 
 -- Insert test sales
-insert into Sale(startDate, endDate, discount, productCategory) values ('2022-11-22', '2022-11-29', 0.4, 'Tech');
+insert into Sale(startDate, endDate, discount, productCategory) values ('2022-12-2', '2022-12-31', 0.4, 'Tech');
+insert into Sale(startDate, endDate, discount, productCategory) values ('2022-12-2', '2022-12-31', 0.2, 'Fashion');
