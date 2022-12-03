@@ -5,30 +5,30 @@
 drop table if exists CartProduct;
 drop table if exists Product;
 drop table if exists CreditCard;
-drop table if exists Email;
 drop table if exists Cart;
 drop table if exists Customer;
 drop table if exists Address;
 drop table if exists Country;
 drop table if exists State;
+drop table if exists Sale;
 
 
 -- This table models a state/province
 create table State (
     stateId int IDENTITY(1,1) PRIMARY KEY NOT NULL,
-    state varchar(255) NOT NULL
+    state varchar(255) NOT NULL UNIQUE
 );
 
 -- This table models a country
 create table Country (
     countryId int IDENTITY(1,1) PRIMARY KEY NOT NULL,
-    country varchar(255) NOT NULL
+    country varchar(255) NOT NULL UNIQUE
 );
 
 -- This table models an address
 create table Address (
     addressId int IDENTITY(1,1) PRIMARY KEY NOT NULL,
-    street varchar(255) NOT NULL UNIQUE,
+    street varchar(255) NOT NULL,
     city varchar(255) NOT NULL,
     zipCode varchar(255) NOT NULL
 );
@@ -44,7 +44,8 @@ alter table Address
 create table Customer (
     customerId int IDENTITY(1,1) PRIMARY KEY NOT NULL,
     lastName varchar(255) NOT NULL,
-    firstName varchar(255) NOT NULL
+    firstName varchar(255) NOT NULL,
+    email varchar(255) NOT NULL UNIQUE
 );
 
 alter table Customer
@@ -57,16 +58,6 @@ create table Cart(
 
 -- Add in foreign key reference
 alter table Cart 
-    add customerId int REFERENCES Customer(customerId);
-
--- This table models an email a customer would have
-create table Email (
-    emailId int IDENTITY(1,1) PRIMARY KEY NOT NULL,
-    email varchar(255)
-);
-
--- Add in foreign key reference
-alter table Email
     add customerId int REFERENCES Customer(customerId);
 
 -- This table models a credit card a customer would use
@@ -95,7 +86,7 @@ create table Product (
     productHeight float NOT NULL,
     productWidth float NOT NULL,
     productDepth float NOT NULL,
-    productSKU varchar(255) NOT NULL
+    productSKU varchar(255) NOT NULL UNIQUE
     -- TODO: add images
 );
 

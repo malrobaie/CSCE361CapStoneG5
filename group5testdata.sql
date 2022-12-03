@@ -20,11 +20,11 @@ insert into Address(street,city,zipCode,stateId,countryId) values ('660 Rowland 
 insert into Address(street,city,zipCode,stateId,countryId) values ('1099 Barnett Avenue','Columbus', '43204', 5, 1);
 
 -- Insert test customer
-insert into Customer(lastName, firstName, addressId) values ('Shrubsall', 'Trudey', 1);
-insert into Customer(lastName, firstName, addressId) values ('Blakeston', 'Millard', 2);
-insert into Customer(lastName, firstName, addressId) values ('Dellenbrook', 'Bobine', 3);
-insert into Customer(lastName, firstName, addressId) values ('Arondel', 'Nick', 4);
-insert into Customer(lastName, firstName, addressId) values ('Abbey', 'Jennilee', 5);
+insert into Customer(lastName, firstName, addressId, email) values ('Shrubsall', 'Trudey', 1, 'tshrubsall2@sitemeter.com');
+insert into Customer(lastName, firstName, addressId, email) values ('Blakeston', 'Millard', 2, 'mblakeston@businessinsider.com');
+insert into Customer(lastName, firstName, addressId, email) values ('Dellenbrook', 'Bobine', 3, 'dellenbrook3@yahoo.com');
+insert into Customer(lastName, firstName, addressId, email) values ('Arondel', 'Nick', 4, 'bm@ibm.com');
+insert into Customer(lastName, firstName, addressId, email) values ('Abbey', 'Jennilee', 5, 'jennileea@cse.unl.edu');
 
 -- Insert test cart
 insert into Cart(customerId) values (1);
@@ -32,14 +32,6 @@ insert into Cart(customerId) values (2);
 insert into Cart(customerId) values (3);
 insert into Cart(customerId) values (4);
 insert into Cart(customerId) values (5);
-
--- Insert test email
-insert into Email(email, customerId) values ('tshrubsall2@sitemeter.com', 1)
-insert into Email(email, customerId) values ('mblakeston@businessinsider.com', 2);
-insert into Email(email, customerId) values ('dellenbrook3@yahoo.com', 3);
-insert into Email(email, customerId) values ('bm@ibm.com', 4);
-insert into Email(email, customerId) values ('jennileea@cse.unl.edu', 5);
-insert into Email(email, customerId) values ('jenileea@unl.edu', 5);
 
 -- Insert test credit card
 insert into CreditCard(creditName, creditType, creditNumber, cvc, expDate, customerId) values ('Trudey''s American Express Card', 'amex', '372301652498256', '342', '2025-12-09', 1);
@@ -58,6 +50,10 @@ insert into Product(productName, productCategory, productPrice, manufacturerName
 insert into Product(productName, productCategory, productPrice, manufacturerName, productDescription, productHeight, productWidth, productDepth, productSKU) values ('Prada 55WS', 'Fashion', 369.99, 'EssilorLuxottica', 'Polarized universal fit sunglasses', 2, 7, 0.1, 'ngadg8');
 insert into Product(productName, productCategory, productPrice, manufacturerName, productDescription, productHeight, productWidth, productDepth, productSKU) values ('Razer Blade 14', 'Trending', 1999.99, 'Razer', 'Our most powerful 14-inch gaming laptop is back and more powerful than ever before.',
 12.59, 8.66, 0.66, '8tcnnw');
+insert into Product(productName, productCategory, productPrice, manufacturerName, productDescription, productHeight, productWidth, productDepth, productSKU) values ('Intel Core i5-13600KF', 'Tech', 309.99, 'Intel', 
+'Performance hybrid architecture integrates two core microarchitectures, prioritizing and distributing workloads to optimize performance', 9.17, 4.65, 4.21, '24fwaf');
+insert into Product(productName, productCategory, productPrice, manufacturerName, productDescription, productHeight, productWidth, productDepth, productSKU) values ('The Ugly Christmas Sweater Company Holiday Ugly Xmas Crew Sweaters for Men', 'Trending', 59.99, 'The Ugly Christmas Sweater Company', 
+'100% cotton, imported', 10, 12, 2, '4df2s');
 
 -- Insert test products in a cart
 insert into CartProduct(quantity, cartId, productId) values (3, 1, 1);
@@ -71,4 +67,5 @@ insert into CartProduct(quantity, cartId, productId) values (2, 4, 4);
 insert into CartProduct(quantity, cartId, productId) values (1, 5, 1);
 
 -- Insert test sales
-insert into Sale(startDate, endDate, discount, productCategory) values ('2022-11-22', '2022-11-29', 0.4, 'Tech');
+insert into Sale(startDate, endDate, discount, productCategory) values ('2022-12-2', '2022-12-31', 0.4, 'Tech');
+insert into Sale(startDate, endDate, discount, productCategory) values ('2022-12-2', '2022-12-31', 0.2, 'Fashion');
