@@ -38,15 +38,15 @@ insert into CreditCard(creditName, creditType, creditNumber, cvc, expDate, custo
 insert into CreditCard(creditName, creditType, creditNumber, cvc, expDate, customerId) values ('Jennilee''s Master Card', 'mastercard', '5007667711850105', '780', '2025-11-09', 5);
 
 -- Insert test product
-insert into Product(productName, productCategory, productPrice, manufacturerName, productDescription, productHeight, productWidth, productDepth, productSKU) values ('Adidas Superstar Shoes', 'Fashion', 74.99, 'Adidas', 'Originally made for basketball courts in the ''70s. Celebrated by hip hop royalty in the ''80s.', 12, 3, 2, 'tqoj1z');
-insert into Product(productName, productCategory, productPrice, manufacturerName, productDescription, productHeight, productWidth, productDepth, productSKU) values ('Nintendo Switch', 'Tech', 299.99, 'Nintendo', 'Nintendo Switch is designed to fit your life, transforming from home console to portable system in a snap.', 
+insert into Product(productName, productImage, productCategory, productPrice, manufacturerName, productDescription, productHeight, productWidth, productDepth, productSKU) values ('Adidas Superstar Shoes', '/Users/kevinakerberg/git/CSCE361CapStoneG5/images/adidas_superstar.png', 'Fashion', 74.99, 'Adidas', 'Originally made for basketball courts in the ''70s. Celebrated by hip hop royalty in the ''80s.', 12, 3, 2, 'tqoj1z');
+insert into Product(productName, productImage, productCategory, productPrice, manufacturerName, productDescription, productHeight, productWidth, productDepth, productSKU) values ('Nintendo Switch', '/Users/kevinakerberg/git/CSCE361CapStoneG5/images/nintendo_switch.png', 'Tech', 299.99, 'Nintendo', 'Nintendo Switch is designed to fit your life, transforming from home console to portable system in a snap.', 
 4.01, 9.4, 0.55, 'p3llq6');
-insert into Product(productName, productCategory, productPrice, manufacturerName, productDescription, productHeight, productWidth, productDepth, productSKU) values ('Prada 55WS', 'Fashion', 369.99, 'EssilorLuxottica', 'Polarized universal fit sunglasses', 2, 7, 0.1, 'ngadg8');
-insert into Product(productName, productCategory, productPrice, manufacturerName, productDescription, productHeight, productWidth, productDepth, productSKU) values ('Razer Blade 14', 'Trending', 1999.99, 'Razer', 'Our most powerful 14-inch gaming laptop is back and more powerful than ever before.',
+insert into Product(productName, productImage, productCategory, productPrice, manufacturerName, productDescription, productHeight, productWidth, productDepth, productSKU) values ('Prada 55WS', '/Users/kevinakerberg/git/CSCE361CapStoneG5/images/prada_55ws.png', 'Fashion', 369.99, 'EssilorLuxottica', 'Polarized universal fit sunglasses', 2, 7, 0.1, 'ngadg8');
+insert into Product(productName, productImage, productCategory, productPrice, manufacturerName, productDescription, productHeight, productWidth, productDepth, productSKU) values ('Razer Blade 14', '/Users/kevinakerberg/git/CSCE361CapStoneG5/images/blade_14.png', 'Trending', 1999.99, 'Razer', 'Our most powerful 14-inch gaming laptop is back and more powerful than ever before.',
 12.59, 8.66, 0.66, '8tcnnw');
-insert into Product(productName, productCategory, productPrice, manufacturerName, productDescription, productHeight, productWidth, productDepth, productSKU) values ('Intel Core i5-13600KF', 'Tech', 309.99, 'Intel', 
+insert into Product(productName, productImage, productCategory, productPrice, manufacturerName, productDescription, productHeight, productWidth, productDepth, productSKU) values ('Intel Core i5-13600KF', '/Users/kevinakerberg/git/CSCE361CapStoneG5/images/i5_13600kf.png', 'Tech', 309.99, 'Intel', 
 'Performance hybrid architecture integrates two core microarchitectures, prioritizing and distributing workloads to optimize performance', 9.17, 4.65, 4.21, '24fwaf');
-insert into Product(productName, productCategory, productPrice, manufacturerName, productDescription, productHeight, productWidth, productDepth, productSKU) values ('The Ugly Christmas Sweater Company Holiday Ugly Xmas Crew Sweaters for Men', 'Trending', 59.99, 'The Ugly Christmas Sweater Company', 
+insert into Product(productName, productImage, productCategory, productPrice, manufacturerName, productDescription, productHeight, productWidth, productDepth, productSKU) values ('The Ugly Christmas Sweater Company Holiday Ugly Xmas Crew Sweaters for Men', '/Users/kevinakerberg/git/CSCE361CapStoneG5/images/ugly_christmas_sweater.jpg', 'Trending', 59.99, 'The Ugly Christmas Sweater Company', 
 '100% cotton, imported', 10, 12, 2, '4df2s');
 
 -- Insert test products in a cart
@@ -63,3 +63,4 @@ insert into CartProduct(quantity, customerId, productId) values (1, 5, 1);
 -- Insert test sales
 insert into Sale(startDate, endDate, discount, productCategory) values ('2022-12-2', '2022-12-31', 0.4, 'Tech');
 insert into Sale(startDate, endDate, discount, productCategory) values ('2022-12-2', '2022-12-31', 0.2, 'Fashion');
+insert into Sale(startDate, endDate, discount, productCategory) values ('2022-12-2', '2022-12-31', 0.25, 'Trending');

@@ -36,6 +36,8 @@ namespace DataContainers
     {
         public string Name {get; set; }
 
+        public String Image {get; set; }
+
         public double Price {get; set; }
 
         public string? Description {get; set; }
@@ -55,8 +57,6 @@ namespace DataContainers
         public string? SKU {get; set; }
 
         public string? Category {get; set; }
-
-        //public List<string>? Images {get; set; }
 
     }
 
