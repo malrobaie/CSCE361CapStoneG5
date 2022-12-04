@@ -295,7 +295,7 @@ namespace Tests
     }
 
     [TestClass]
-    public class TestDBPulls
+    public class TestIDPulls
     {
         [TestMethod]
         public void PullStateIDFromDataBase()
@@ -414,6 +414,55 @@ namespace Tests
                 con.Open();
                 Assert.IsNotNull(getCC.GetId(creditCard, con));
                 con.Close();
+            }
+        }
+    }
+
+    [TestClass]
+    public class TestDBPulls
+    {
+        [TestMethod]
+        public void PullProductsOfOneCategory()
+        {
+            using (SqlConnection con = DBTools.ConnectToDB())
+            {
+                var getProds = new GetProduct();
+                List<Product> products = new List<Product>();
+                con.Open();
+                products = getProds.GetProductsBasedOnCategory("Tech", con);
+                con.Close();
+
+                Assert.AreNotEqual(products.Count, 0);
+            }
+        }
+
+        [TestMethod]
+        public void PullProductsFromSearchTerms()
+        {
+            using (SqlConnection con = DBTools.ConnectToDB())
+            {
+                var getProds = new GetProduct();
+                List<Product> products = new List<Product>();
+                con.Open();
+                products = getProds.GetProductsFromSearch("ten", con);
+                con.Close();
+
+                Assert.AreNotEqual(products.Count, 0);
+            }
+        }
+
+        [TestMethod]
+        public void PullProductsFromSale()
+        {
+            using (SqlConnection con = DBTools.ConnectToDB())
+            {
+                var getProds = new GetProduct();
+                List<Product> products = new List<Product>();
+                con.Open();
+                products = getProds.GetProductsFromSearch("ten", con);
+                con.Close();
+
+                Assert.AreNotEqual(products.Count, 0);
             }
         }
     }

@@ -1,4 +1,5 @@
 ﻿using DataContainers;
+using HT.Core;
 using System.Data.SqlClient;
 
 namespace Accessors.PullFromDB
@@ -146,6 +147,105 @@ namespace Accessors.PullFromDB
                     return productId;
                 }   
         }
+
+        public List<Product> GetProductsBasedOnCategory(string category, SqlConnection con)
+        {
+            List<Product> products = new List<Product>();
+            using (SqlCommand cmd = con.CreateCommand())
+                {
+                    cmd.CommandText = "SELECT productName, productCategory, productPrice, manufacturerName, productDescription, productHeight, " +
+                                        "productWidth, productDepth, productSKU FROM Product WHERE (productCategory = @category)";
+                    
+                    cmd.Parameters.AddWithValue("@category", category);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        
+                        while(reader.Read())
+                        {
+                            Product product = new Product();
+                            product.Name = reader["productName"].ToString();
+                            product.Depth = (double) reader["productDepth"];
+                            product.SKU = reader["productSKU"].ToString();
+                            product.Description = reader["productDescription"].ToString();
+                            product.ManufacturerInfo = reader["manufacturerName"].ToString();
+                            product.Width = (double)reader["productWidth"];
+                            product.Category = reader["productCategory"].ToString();
+                            product.Price = (double)reader["productPrice"];
+                            product.Height = (double) reader["productHeight"];
+
+                            products.Add(product);
+                        }
+                    }
+                    return products;
+                }
+        }
+
+        public List<Product> GetProductsFromSearch(string search, SqlConnection con)
+        {
+             List<Product> products = new List<Product>();
+            using (SqlCommand cmd = con.CreateCommand())
+                {
+                    cmd.CommandText = "SELECT productName, productCategory, productPrice, manufacturerName, productDescription, productHeight, productWidth, productDepth, productSKU " +
+                                        "FROM Product " +
+                                        "WHERE (productName LIKE @search) OR (productCategory LIKE @search) OR (manufacturerName LIKE @search) OR (productDescription LIKE @search) OR (productSKU LIKE @search)";
+
+                    search = "%" + search + "%";
+                    cmd.Parameters.AddWithValue("@search", search);
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while(reader.Read())
+                    {
+                        Product product = new Product();
+                        product.Name = reader["productName"].ToString();
+                        product.Depth = (double) reader["productDepth"];
+                        product.SKU = reader["productSKU"].ToString();
+                        product.Description = reader["productDescription"].ToString();
+                        product.ManufacturerInfo = reader["manufacturerName"].ToString();
+                        product.Width = (double)reader["productWidth"];
+                        product.Category = reader["productCategory"].ToString();
+                        product.Price = (double)reader["productPrice"];
+                        product.Height = (double) reader["productHeight"];
+
+                        products.Add(product);
+                    }
+                }
+                    return products;
+                }
+        }
+
+        public List<Product> GetProductsFromSale(Sale sale, SqlConnection con)
+        {
+            List<Product> products = new List<Product>();
+            using (SqlCommand cmd = con.CreateCommand())
+                {
+                    cmd.CommandText = "SELECT productName, productCategory, productPrice, manufacturerName, productDescription, productHeight, productWidth, productDepth, productSKU " +
+                                        "FROM Product " +
+                                        "WHERE (productCategory = @category);";
+
+                    cmd.Parameters.AddWithValue("@category", sale.Category);
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while(reader.Read())
+                        {
+                            Product product = new Product();
+                            product.Name = reader["productName"].ToString();
+                            product.Depth = (double) reader["productDepth"];
+                            product.SKU = reader["productSKU"].ToString();
+                            product.Description = reader["productDescription"].ToString();
+                            product.ManufacturerInfo = reader["manufacturerName"].ToString();
+                            product.Width = (double)reader["productWidth"];
+                            product.Category = reader["productCategory"].ToString();
+                            product.Price = (double)reader["productPrice"];
+                            product.Height = (double) reader["productHeight"];
+
+                            products.Add(product);
+                        }
+                    }
+                    return products;
+                }
+        }
+
     }
 
     public class GetCreditCard : IGetID<CreditCard>
@@ -171,10 +271,4 @@ namespace Accessors.PullFromDB
     }
 
 
-    public interface IGetDataObject<in T> where T : class
-    {
-        public void GetAll(T var, SqlConnection con);
-
-        public void GetOne(T var, SqlConnection con);
-    }
 }
