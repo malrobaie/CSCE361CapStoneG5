@@ -70,6 +70,7 @@ alter table CreditCard
 create table Product (
     productId int IDENTITY(1,1) PRIMARY KEY NOT NULL,
     productName varchar(255) NOT NULL,
+    productImage varchar(255) NOT NULL, -- inserted the file path which the program can use to pull up the image
     productCategory varchar(255) NOT NULL,
     productPrice float NOT NULL,
     manufacturerName varchar(255) NOT NULL,
@@ -78,7 +79,6 @@ create table Product (
     productWidth float NOT NULL,
     productDepth float NOT NULL,
     productSKU varchar(255) NOT NULL UNIQUE
-    -- TODO: add images
 );
 
 -- This table is a join table between products and a user's shopping cart
