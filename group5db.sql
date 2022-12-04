@@ -51,22 +51,13 @@ create table Customer (
 alter table Customer
     add addressId int REFERENCES Address(addressId);
 
--- This table models a customer's shopping cart
-create table Cart(
-    cartId int IDENTITY(1,1) PRIMARY KEY NOT NULL
-);
-
--- Add in foreign key reference
-alter table Cart 
-    add customerId int REFERENCES Customer(customerId);
-
 -- This table models a credit card a customer would use
 create table CreditCard (
     creditId int IDENTITY(1,1) PRIMARY KEY NOT NULL,
     creditName varchar(255) NOT NULL,
     creditType varchar(255) NOT NULL,
     creditNumber float NOT NULL UNIQUE,
-    cvc int NOT NULL UNIQUE,
+    cvc int NOT NULL,
     expDate date NOT NULL
 );
 
@@ -79,6 +70,7 @@ alter table CreditCard
 create table Product (
     productId int IDENTITY(1,1) PRIMARY KEY NOT NULL,
     productName varchar(255) NOT NULL,
+    productImage varchar(255) NOT NULL, -- inserted the file path which the program can use to pull up the image
     productCategory varchar(255) NOT NULL,
     productPrice float NOT NULL,
     manufacturerName varchar(255) NOT NULL,
@@ -87,7 +79,6 @@ create table Product (
     productWidth float NOT NULL,
     productDepth float NOT NULL,
     productSKU varchar(255) NOT NULL UNIQUE
-    -- TODO: add images
 );
 
 -- This table is a join table between products and a user's shopping cart
@@ -98,7 +89,7 @@ create table CartProduct (
 
 -- Add in foreign key references
 alter table CartProduct
-    add cartId int REFERENCES Cart(cartId);
+    add customerId int REFERENCES Customer(customerId);
 
 alter table CartProduct
     add productId int REFERENCES Product(productId);
