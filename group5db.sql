@@ -51,22 +51,13 @@ create table Customer (
 alter table Customer
     add addressId int REFERENCES Address(addressId);
 
--- This table models a customer's shopping cart
-create table Cart(
-    cartId int IDENTITY(1,1) PRIMARY KEY NOT NULL
-);
-
--- Add in foreign key reference
-alter table Cart 
-    add customerId int REFERENCES Customer(customerId);
-
 -- This table models a credit card a customer would use
 create table CreditCard (
     creditId int IDENTITY(1,1) PRIMARY KEY NOT NULL,
     creditName varchar(255) NOT NULL,
     creditType varchar(255) NOT NULL,
     creditNumber float NOT NULL UNIQUE,
-    cvc int NOT NULL UNIQUE,
+    cvc int NOT NULL,
     expDate date NOT NULL
 );
 
@@ -98,7 +89,7 @@ create table CartProduct (
 
 -- Add in foreign key references
 alter table CartProduct
-    add cartId int REFERENCES Cart(cartId);
+    add customerId int REFERENCES Customer(customerId);
 
 alter table CartProduct
     add productId int REFERENCES Product(productId);
