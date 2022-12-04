@@ -184,10 +184,11 @@ namespace Accessors.InsertIntoDB
 
             using (SqlCommand cmd = con.CreateCommand())
             {
-                cmd.CommandText = "insert into Product (productName, productCategory, productPrice, manufacturerName, productDescription, productHeight, productWidth, productDepth, productSKU) " +
+                cmd.CommandText = "insert into Product (productName, productImage, productCategory, productPrice, manufacturerName, productDescription, productHeight, productWidth, productDepth, productSKU) " +
                                                 "values (@productName, @productCategory, @productPrice, @manufacturerName, @productDescription, @productHeight, @productWidth, @productDepth, @productSKU);" +
                                     "SELECT productId FROM Product WHERE productId = SCOPE_IDENTITY();";
                 cmd.Parameters.AddWithValue("@productName", product.Name);
+                cmd.Parameters.AddWithValue("@productImage", product.Image);
                 cmd.Parameters.AddWithValue("@productCategory", product.Category);
                 cmd.Parameters.AddWithValue("@productPrice", product.Price);
                 cmd.Parameters.AddWithValue("@manufacturerName", product.ManufacturerInfo);

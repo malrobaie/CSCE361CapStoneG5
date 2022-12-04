@@ -1,0 +1,136 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/kevinakerberg/git/CSCE361CapStoneG5/Engine/Engine.csproj": {}
+  },
+  "projects": {
+    "/Users/kevinakerberg/git/CSCE361CapStoneG5/DataContracts/DataContainers.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/kevinakerberg/git/CSCE361CapStoneG5/DataContracts/DataContainers.csproj",
+        "projectName": "DataContainers",
+        "projectPath": "/Users/kevinakerberg/git/CSCE361CapStoneG5/DataContracts/DataContainers.csproj",
+        "packagesPath": "/Users/kevinakerberg/.nuget/packages/",
+        "outputPath": "/Users/kevinakerberg/git/CSCE361CapStoneG5/DataContracts/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/kevinakerberg/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "FontAwesome": {
+              "target": "Package",
+              "version": "[4.7.0, )"
+            },
+            "HT.Components": {
+              "target": "Package",
+              "version": "[6.0.6, )"
+            },
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/kevinakerberg/git/CSCE361CapStoneG5/Engine/Engine.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/kevinakerberg/git/CSCE361CapStoneG5/Engine/Engine.csproj",
+        "projectName": "Engine",
+        "projectPath": "/Users/kevinakerberg/git/CSCE361CapStoneG5/Engine/Engine.csproj",
+        "packagesPath": "/Users/kevinakerberg/.nuget/packages/",
+        "outputPath": "/Users/kevinakerberg/git/CSCE361CapStoneG5/Engine/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/kevinakerberg/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/kevinakerberg/git/CSCE361CapStoneG5/DataContracts/DataContainers.csproj": {
+                "projectPath": "/Users/kevinakerberg/git/CSCE361CapStoneG5/DataContracts/DataContainers.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
