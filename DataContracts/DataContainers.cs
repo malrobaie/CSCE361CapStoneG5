@@ -14,7 +14,7 @@ namespace DataContainers
         
         public Address Address {get; set; }
         
-        public List<CreditCard>? PaymentMethods {get; set; }
+        public List<CreditCard>? paymentMethods {get; set; }
         
         public Dictionary<Product, int>? Cart {get; set; }
     }
@@ -46,7 +46,11 @@ namespace DataContainers
 
         //public double? Rating {get; set; }
 
-        public Dimensions? Dimensions {get; set; }
+        public double Depth {get; set; }
+
+        public double Height {get; set; }
+
+        public double Width {get; set; }
 
         public string? SKU {get; set; }
 
@@ -54,43 +58,33 @@ namespace DataContainers
 
         //public List<string>? Images {get; set; }
 
-        public Sale? Sale {get; set; }
-
-    }
-
-    public class Dimensions
-    {
-        public double Depth {get; set; }
-
-        public double Height {get; set; }
-
-        public double Width {get; set; }
     }
 
     public class Sale
     {
         //public double? DiscountAmount {get; set; }
+        public int? SaleId {get; set; }
 
-        public double? DiscountPercent {get; set; }
+        public double? Discount {get; set; }
 
         public string? Category {get; set; }
+        //date format = yyyy-mm-dd
+        public string StartDate {get; set; }
 
-        public DateOnly StartDate {get; set; }
-
-        public DateOnly EndDate {get; set; }
+        public string EndDate {get; set; }
 
         //public List<Product>? Products {get; set; }
     }
 
     public class CreditCard
     {
-        public string CreditName {get;}
+        public string CreditName {get; set; }
         
-        public string CreditType {get;}
+        public string CreditType {get; set;}
         
-        public DateOnly ExperationDate {get; set; }
+        public string ExperationDate {get; set; }
 
-        public CreditCardAttribute CreditNumber {get;}
+        public double CreditNumber {get; set; }
 
         public int? CVV {get; set;}
 

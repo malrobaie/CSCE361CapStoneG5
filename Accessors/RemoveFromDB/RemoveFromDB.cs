@@ -1,6 +1,7 @@
 ﻿using Accessors.PullFromDB;
 using DataContainers;
 using System.Data.SqlClient;
+using System.Net;
 
 namespace Accessors.RemoveFromDB
 {
@@ -43,9 +44,9 @@ namespace Accessors.RemoveFromDB
         {
             using (SqlCommand cmd = con.CreateCommand())
             {
-                var getAddress = new GetAddressId();
+                var getAddress = new GetAddress();
                 cmd.CommandText = "DELETE FROM [Address] WHERE (addressId = @addressId);";
-                cmd.Parameters.AddWithValue("@addressId", getAddress.Get(address, con));
+                cmd.Parameters.AddWithValue("@addressId", getAddress.GetId(address, con));
                 return cmd.ExecuteNonQuery();
             }
             
@@ -58,12 +59,54 @@ namespace Accessors.RemoveFromDB
         {
             using (SqlCommand cmd = con.CreateCommand())
             {
-                var getCustomer = new GetCustomerId();
+                var getCustomer = new GetCustomer();
                 cmd.CommandText = "DELETE FROM [Customer] WHERE (customerId = @customerId);";
-                cmd.Parameters.AddWithValue("@customerId", getCustomer.Get(customer, con));
+                cmd.Parameters.AddWithValue("@customerId", getCustomer.GetId(customer, con));
                 return cmd.ExecuteNonQuery();
             }
             
+        }
+    }
+
+    public class RemoveSale : IRemove<Sale>
+    {
+        public int Remove(Sale sale, SqlConnection con)
+        {
+            using (SqlCommand cmd = con.CreateCommand())
+            {
+                var getSale = new GetSale();
+                cmd.CommandText = "DELETE FROM [Sale] WHERE (saleId = @saleId);";
+                cmd.Parameters.AddWithValue("@saleId", getSale.GetId(sale, con));
+                return cmd.ExecuteNonQuery();
+            }
+        }
+    }
+
+    public class RemoveProduct : IRemove<Product>
+    {
+        public int Remove(Product product, SqlConnection con)
+        {
+            using (SqlCommand cmd = con.CreateCommand())
+            {
+                var getProduct = new GetProduct();
+                cmd.CommandText = "DELETE FROM [Product] WHERE (productId = @productId);";
+                cmd.Parameters.AddWithValue("@productId", getProduct.GetId(product, con));
+                return cmd.ExecuteNonQuery();
+            }
+        }
+    }
+
+    public class RemoveCreditCard : IRemove<CreditCard>
+    {
+        public int Remove(CreditCard creditCard, SqlConnection con)
+        {
+            using (SqlCommand cmd = con.CreateCommand())
+            {
+                var getCC = new GetCreditCard();
+                cmd.CommandText = "DELETE FROM [CreditCard] WHERE (creditId = @creditId);";
+                cmd.Parameters.AddWithValue("@creditId", getCC.GetId(creditCard, con));
+                return cmd.ExecuteNonQuery();
+            }
         }
     }
 }

@@ -187,7 +187,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\DataContracts\\DataContainers.csproj": {
+                "projectPath": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\DataContracts\\DataContainers.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

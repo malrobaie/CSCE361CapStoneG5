@@ -1017,6 +1017,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
+          "DataContainers": "1.0.0",
           "FontAwesome": "4.7.0",
           "HT.Components": "6.0.6",
           "System.Data.SqlClient": "4.8.5"
