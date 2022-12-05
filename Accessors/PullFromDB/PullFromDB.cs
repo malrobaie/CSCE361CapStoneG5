@@ -125,6 +125,7 @@ namespace Accessors.PullFromDB
         public Customer GetCustomerFromEmail(string email)
         {
             Customer customer = new Customer();
+            customer.Address = new Address();
             using(SqlConnection con = DBTools.ConnectToDB())
             {
                 con.Open();
@@ -352,6 +353,37 @@ namespace Accessors.PullFromDB
                 }
                 con.Close();
                 return ccId;
+            }
+        }
+
+        public void GetAllCardsForCustomer(Customer customer)
+        {
+            customer.paymentMethods = new List<CreditCard>();
+             using(SqlConnection con = DBTools.ConnectToDB())
+            {
+                con.Open();
+                using (SqlCommand cmd = con.CreateCommand())
+                {
+                    var getCustId = new GetCustomer();
+                    cmd.CommandText = "SELECT creditName, creditType, creditNumber, expDate, cvc FROM CreditCard WHERE (customerId = @custId)";
+                    cmd.Parameters.AddWithValue("@custId", getCustId.GetId(customer));
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while(reader.Read())
+                        {
+                            CreditCard card = new CreditCard();
+                            card.CVV = (int)reader["cvc"];
+                            card.CreditName = reader["creditName"].ToString();
+                            card.CreditNumber = (double)reader["creditNumber"];
+                            card.CreditType = reader["credittype"].ToString();
+                            card.ExperationDate = reader["expDate"].ToString();
+
+                            customer.paymentMethods.Add(card);
+                        }
+                    }
+                }
+                con.Close();
             }
         }
     }
