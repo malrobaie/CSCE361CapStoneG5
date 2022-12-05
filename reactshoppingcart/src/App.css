@@ -50,3 +50,10 @@
 .navbar-expand-lg {
   color: F5F5F5;
 }
+
+.text-center {
+  background-color: F5F5F5;
+  color: #1E2D7B;
+  font-family: system-ui;
+  font-weight: 400;
+}
