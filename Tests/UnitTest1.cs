@@ -380,14 +380,27 @@ namespace Tests
             
         }
 
+        [TestMethod]
         public void PullCustomerByEmail()
         {
-            Customer customer = new Customer();
             var getCust = new GetCustomer();
 
-            customer = getCust.GetCustomerFromEmail("mblakeston@businessinsider.com");
+            Customer customer = getCust.GetCustomerFromEmail("mblakeston@businessinsider.com");
 
             Assert.AreEqual(customer.FirstName, "Millard");
+        }
+
+        [TestMethod]
+        public void PullAllCardsForOneCutomer()
+        {
+            var getCard = new GetCreditCard();
+            var getCust = new GetCustomer();
+            
+            Customer customer = getCust.GetCustomerFromEmail("dellenbrook3@yahoo.com");
+
+            getCard.GetAllCardsForCustomer(customer);
+
+            Assert.AreEqual(customer.paymentMethods.Count, 3);
         }
     }
 }
