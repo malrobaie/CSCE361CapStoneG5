@@ -1,5 +1,4 @@
 ﻿using DataContainers;
-using HT.Core;
 using System.Data.SqlClient;
 using Tools;
 
@@ -184,6 +183,36 @@ namespace Accessors.PullFromDB
                     return saleId;
                 }   
         }
+
+        public static List<Sale> GetSaleList()
+        {
+            using(SqlConnection con = DBTools.ConnectToDB())
+            {
+                List<Sale> list = new List<Sale>();
+                con.Open();
+                using (SqlCommand cmd = con.CreateCommand())
+                {
+                    cmd.CommandText = "SELECT startDate, endDate, discount, productCategory FROM Sale";
+                    
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while(reader.Read())
+                        {
+                            Sale sale = new Sale();
+
+                            sale.StartDate = DateTime.Parse(reader["startDate"].ToString());
+                            sale.Category = reader["productCategory"].ToString();
+                            sale.Discount = (double)reader["discount"];
+                            sale.EndDate = DateTime.Parse(reader["endDate"].ToString());
+
+                            list.Add(sale);
+                        }
+                    }
+                }
+                con.Close();
+                return list;
+            }
+        }
     }
 
     public class GetProduct : IGetID<Product>
@@ -359,7 +388,40 @@ namespace Accessors.PullFromDB
         public void GetAllCardsForCustomer(Customer customer)
         {
             customer.paymentMethods = new List<CreditCard>();
-             using(SqlConnection con = DBTools.ConnectToDB())
+            using(SqlConnection con = DBTools.ConnectToDB())
+            {
+                con.Open();
+                using (SqlCommand cmd = con.CreateCommand())
+                {
+                    var getCustId = new GetCustomer();
+                    cmd.CommandText = "SELECT creditName, creditType, creditNumber, expDate, cvc FROM CreditCard WHERE (customerId = @custId)";
+                    cmd.Parameters.AddWithValue("@custId", getCustId.GetId(customer));
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while(reader.Read())
+                        {
+                            CreditCard card = new CreditCard();
+                            card.CVV = (int)reader["cvc"];
+                            card.CreditName = reader["creditName"].ToString();
+                            card.CreditNumber = (double)reader["creditNumber"];
+                            card.CreditType = reader["credittype"].ToString();
+                            card.ExperationDate = reader["expDate"].ToString();
+
+                            customer.paymentMethods.Add(card);
+                        }
+                    }
+                }
+                con.Close();
+            }
+        }
+    }
+
+    public class GetCart
+    {
+        public void GetCustomerCart(Customer customer)
+        {
+            using(SqlConnection con = DBTools.ConnectToDB())
             {
                 con.Open();
                 using (SqlCommand cmd = con.CreateCommand())

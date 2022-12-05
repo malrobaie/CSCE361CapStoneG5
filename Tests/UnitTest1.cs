@@ -170,8 +170,8 @@ namespace Tests
                 var inSale = new InsertSale();
                 var remSale = new RemoveSale();
                 Sale sale= new Sale();
-                sale.StartDate = "2022-12-05";
-                sale.EndDate = "2022-12-31";
+                sale.StartDate = DateTime.Parse("12/15/2022");
+                sale.EndDate = DateTime.Parse("2022-12-31");
                 sale.Discount = 1.0;
                 sale.Category = "Fake";
 
@@ -298,8 +298,8 @@ namespace Tests
         {
             var getSale = new GetSale();
             Sale sale= new Sale();
-            sale.StartDate = "2022-12-2";
-            sale.EndDate = "2022-12-31";
+            sale.StartDate = DateTime.Parse("12/2/2022");
+            sale.EndDate = DateTime.Parse("12/31/2022");
             sale.Category = "Tech";
 
             Assert.IsNotNull(getSale.GetId(sale));
@@ -366,8 +366,8 @@ namespace Tests
         {
             
             Sale sale = new Sale();
-            sale.StartDate = "2022-12-2";
-            sale.EndDate = "2022-12-31";
+            sale.StartDate = DateTime.Parse("12/15/2022");
+            sale.EndDate = DateTime.Parse("12/15/2022");
             sale.Discount = 0.4;
             sale.Category = "Tech";
             var getProds = new GetProduct();
@@ -401,6 +401,14 @@ namespace Tests
             getCard.GetAllCardsForCustomer(customer);
 
             Assert.AreEqual(customer.paymentMethods.Count, 3);
+        }
+
+        [TestMethod]
+        public void PullSalesList()
+        {
+            List<Sale> sales = GetSale.GetSaleList();
+            
+            Assert.AreNotEqual(sales.Count, 0);
         }
     }
 }

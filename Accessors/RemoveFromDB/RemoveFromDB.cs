@@ -1,7 +1,6 @@
 ﻿using Accessors.PullFromDB;
 using DataContainers;
 using System.Data.SqlClient;
-using System.Net;
 using Tools;
 
 namespace Accessors.RemoveFromDB

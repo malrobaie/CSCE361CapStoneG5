@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace DataContainers
+﻿namespace DataContainers
 {
     public class Customer
     {
@@ -61,13 +59,13 @@ namespace DataContainers
         //public double? DiscountAmount {get; set; }
         public int? SaleId {get; set; }
 
-        public double? Discount {get; set; }
+        public double Discount {get; set; }
 
         public string? Category {get; set; }
         //date format = yyyy-mm-dd
-        public string StartDate {get; set; }
+        public DateTime StartDate {get; set; }
 
-        public string EndDate {get; set; }
+        public DateTime EndDate {get; set; }
 
         //public List<Product>? Products {get; set; }
     }
