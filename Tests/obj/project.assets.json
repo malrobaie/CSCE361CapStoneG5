@@ -2116,6 +2116,7 @@
           "DataContainers": "1.0.0",
           "FontAwesome": "4.7.0",
           "HT.Components": "6.0.6",
+          "Microsoft.Data.SqlClient": "5.0.1",
           "Tools": "1.0.0"
         },
         "compile": {
@@ -2148,6 +2149,7 @@
           "DataContainers": "1.0.0",
           "FontAwesome": "4.7.0",
           "HT.Components": "6.0.6",
+          "Microsoft.Data.SqlClient": "5.0.1",
           "System.Data.SqlClient": "4.8.5"
         },
         "compile": {
@@ -6711,35 +6713,43 @@
     ]
   },
   "packageFolders": {
-    "/Users/kevinakerberg/.nuget/packages/": {}
+    "C:\\Users\\jeffl\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/kevinakerberg/git/CSCE361CapStoneG5/Tests/Tests.csproj",
+      "projectUniqueName": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\Tests\\Tests.csproj",
       "projectName": "Tests",
-      "projectPath": "/Users/kevinakerberg/git/CSCE361CapStoneG5/Tests/Tests.csproj",
-      "packagesPath": "/Users/kevinakerberg/.nuget/packages/",
-      "outputPath": "/Users/kevinakerberg/git/CSCE361CapStoneG5/Tests/obj/",
+      "projectPath": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\Tests\\Tests.csproj",
+      "packagesPath": "C:\\Users\\jeffl\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\Tests\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/Users/kevinakerberg/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\jeffl\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "/Users/kevinakerberg/git/CSCE361CapStoneG5/Accessors/Accessors.csproj": {
-              "projectPath": "/Users/kevinakerberg/git/CSCE361CapStoneG5/Accessors/Accessors.csproj"
+            "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\Accessors\\Accessors.csproj": {
+              "projectPath": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\Accessors\\Accessors.csproj"
             },
-            "/Users/kevinakerberg/git/CSCE361CapStoneG5/Tools/Tools.csproj": {
-              "projectPath": "/Users/kevinakerberg/git/CSCE361CapStoneG5/Tools/Tools.csproj"
+            "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\Tools\\Tools.csproj": {
+              "projectPath": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\Tools\\Tools.csproj"
             }
           }
         }
@@ -6801,7 +6811,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.100/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
