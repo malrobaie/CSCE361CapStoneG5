@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Accessors\Accessors.csproj" />
     <ProjectReference Include="..\DataContracts\DataContainers.csproj" />
   </ItemGroup>
 </Project>

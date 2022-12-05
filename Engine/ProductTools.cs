@@ -1,9 +1,12 @@
-﻿/**
+﻿
+
+/**
  * This class contains the methods necessary for working with a shopping
  * cart object in the online cart program
  */
-
 using DataContainers;
+using Accessors.PullFromDB;
+
 namespace Engine
 {
 	public class ProductTools
@@ -13,23 +16,37 @@ namespace Engine
 			double newPrice = 0;
 			double oldPrice = product.Price;
 			double discount = 0;
+			List<Sale> sales = GetSale.GetSaleList();
+			DateTime date = DateTime.Today;
 
 			if (product.Category.Equals("Tech")) {
-				// have a list of sales and pull the one that matches the category and whose dates are valid
-				// have to ask Jeff what he was thinking regarding pulling stuff out of the database to make into objects
-				// Sale sale = get sale from list
-				discount = sale.Discount;
-				newPrice = oldPrice - (oldPrice * discount);
+
+				Sale sale = sales.FirstOrDefault(o => (o.Category == "Tech"));
+				if(sale.StartDate.CompareTo(date) < 0 && sale.EndDate.CompareTo(date) >= 0)
+				{
+					discount = sale.Discount;
+					newPrice = oldPrice - (oldPrice * discount);
+				}
+				
 			}
 			else if (product.Category.Equals("Trending")) {
-				// Sale sale = get sale from list
-				discount = sale.Discount;
-                newPrice = oldPrice - (oldPrice * discount);
-            }
+
+				Sale sale = sales.FirstOrDefault(o => (o.Category == "Trending"));
+				if(sale.StartDate.CompareTo(date) < 0 && sale.EndDate.CompareTo(date) >= 0)
+				{
+					discount = sale.Discount;
+					newPrice = oldPrice - (oldPrice * discount);
+				}
+			}
 			else if (product.Category.Equals("Fashion")) {
-                // Sale sale = get sale from list
-                discount = sale.Discount;
-                newPrice = oldPrice - (oldPrice * discount);
+
+                Sale sale = sales.FirstOrDefault(o => (o.Category == "Fashion"));
+				if(sale.StartDate.CompareTo(date) < 0 && sale.EndDate.CompareTo(date) >= 0)
+				{
+					discount = sale.Discount;
+					newPrice = oldPrice - (oldPrice * discount);
+				}
+
             }
 
 			product.Price = newPrice; // update product price with sale price
