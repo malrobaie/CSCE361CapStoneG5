@@ -8,7 +8,7 @@ using DataContainers;
 namespace Tests
 {
     [TestClass]
-    public class TestDBUpdates
+    public class TestDBInserts
     {
 
         [TestMethod]
@@ -276,15 +276,7 @@ namespace Tests
         {
             var getCustomerId = new GetCustomer();
             Customer customer = new Customer();
-            Address address= new Address();
 
-            address.City = "Lincoln";
-            address.Country = "US";
-            address.State = "Illinois";
-            address.ZipCode = "68524";
-            address.Street = "23 Lotheville Road";
-
-            customer.Address = address;
             customer.LastName = "Shrubsall";
             customer.FirstName = "Trudey";
             customer.Email = "tshrubsall2@sitemeter.com";
@@ -409,6 +401,22 @@ namespace Tests
             List<Sale> sales = GetSale.GetSaleList();
             
             Assert.AreNotEqual(sales.Count, 0);
+        }
+
+        [TestMethod]
+        public void PullCustomerCart()
+        {
+            Customer customer = new Customer();
+
+            customer.LastName = "Shrubsall";
+            customer.FirstName = "Trudey";
+            customer.Email = "tshrubsall2@sitemeter.com";
+
+            var getCart = new GetCart();
+            getCart.GetCustomerCart(customer);
+
+            Assert.AreEqual(customer.Cart.Count, 3);
+            Assert.AreEqual(customer.Cart.Values.Sum(), 5);
         }
     }
 }

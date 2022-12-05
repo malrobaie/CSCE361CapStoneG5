@@ -102,10 +102,9 @@ namespace Accessors.PullFromDB
                 {
                     
                     cmd.CommandText = "SELECT customerId FROM Customer WHERE (lastName = @lastName) and " +
-                                        "(firstName = @firstName) and (addressId = @addressId) and (email = @email);";
+                                        "(firstName = @firstName) and (email = @email);";
                     cmd.Parameters.AddWithValue("@lastName", customer.LastName);
                     cmd.Parameters.AddWithValue("@firstName", customer.FirstName);
-                    cmd.Parameters.AddWithValue("@addressId", int.Parse(getAddress.GetId(customer.Address)));
                     cmd.Parameters.AddWithValue("@email", customer.Email);
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
@@ -421,27 +420,39 @@ namespace Accessors.PullFromDB
     {
         public void GetCustomerCart(Customer customer)
         {
+            customer.Cart = new Dictionary<Product, int>();
             using(SqlConnection con = DBTools.ConnectToDB())
             {
                 con.Open();
                 using (SqlCommand cmd = con.CreateCommand())
                 {
                     var getCustId = new GetCustomer();
-                    cmd.CommandText = "SELECT creditName, creditType, creditNumber, expDate, cvc FROM CreditCard WHERE (customerId = @custId)";
+                    cmd.CommandText = "SELECT Product.productName, Product.productImage, Product.productCategory, Product.productPrice, Product.manufacturerName, " +
+                                        "Product.productDescription, Product.productHeight, Product.productWidth, Product.productDepth, Product.productSKU, CartProduct.quantity " +
+                                        "FROM Customer INNER JOIN CartProduct ON Customer.customerId = CartProduct.customerId INNER JOIN Product ON CartProduct.productId = Product.productId " +
+                                        "WHERE (Customer.customerId = @custId)";
                     cmd.Parameters.AddWithValue("@custId", getCustId.GetId(customer));
 
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         while(reader.Read())
                         {
-                            CreditCard card = new CreditCard();
-                            card.CVV = (int)reader["cvc"];
-                            card.CreditName = reader["creditName"].ToString();
-                            card.CreditNumber = (double)reader["creditNumber"];
-                            card.CreditType = reader["credittype"].ToString();
-                            card.ExperationDate = reader["expDate"].ToString();
+                            Product product = new Product();
 
-                            customer.paymentMethods.Add(card);
+                            product.Name = reader["productName"].ToString();
+                            product.Depth = (double) reader["productDepth"];
+                            product.SKU = reader["productSKU"].ToString();
+                            product.Description = reader["productDescription"].ToString();
+                            product.ManufacturerInfo = reader["manufacturerName"].ToString();
+                            product.Width = (double)reader["productWidth"];
+                            product.Category = reader["productCategory"].ToString();
+                            product.Price = (double)reader["productPrice"];
+                            product.Height = (double) reader["productHeight"];
+                            product.Image = reader["productImage"].ToString();
+
+                            int quantity = (int)reader["quantity"];
+
+                            customer.Cart.Add(product,quantity);
                         }
                     }
                 }
