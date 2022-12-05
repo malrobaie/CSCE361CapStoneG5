@@ -11,7 +11,12 @@ Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "reactShoppingCart", "reactS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tools", "Tools\Tools.csproj", "{72C9CBBE-FABA-43E4-9633-38C1010BBBA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{5084326A-93D0-4AAA-B6CF-02B120F7B4EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{5084326A-93D0-4AAA-B6CF-02B120F7B4EA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{097EDD76-3D14-4401-96BB-9D6244FABD08}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Engine", "Engine\Engine.csproj", "{6C4F0527-BFCB-415B-B87B-962BA4A1CFF8}"
 EndProject

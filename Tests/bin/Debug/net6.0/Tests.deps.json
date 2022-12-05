@@ -1399,6 +1399,7 @@
           "DataContainers": "1.0.0",
           "FontAwesome": "4.7.0",
           "HT.Components": "6.0.6",
+          "Microsoft.Data.SqlClient": "5.0.1",
           "Tools": "1.0.0"
         },
         "runtime": {
@@ -1421,6 +1422,7 @@
           "DataContainers": "1.0.0",
           "FontAwesome": "4.7.0",
           "HT.Components": "6.0.6",
+          "Microsoft.Data.SqlClient": "5.0.1",
           "System.Data.SqlClient": "4.8.5"
         },
         "runtime": {

@@ -44,10 +44,6 @@ namespace DataContainers
 
         public string? ManufacturerInfo {get; set; }
 
-        //public double? Weight {get; set; }
-
-        //public double? Rating {get; set; }
-
         public double Depth {get; set; }
 
         public double Height {get; set; }
