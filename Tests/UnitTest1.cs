@@ -4,6 +4,8 @@ using Accessors.InsertIntoDB;
 using Accessors.PullFromDB;
 using Accessors.RemoveFromDB;
 using DataContainers;
+using HT.Components;
+using Accessors.UpdateDB;
 
 namespace Tests
 {
@@ -412,11 +414,49 @@ namespace Tests
             customer.FirstName = "Trudey";
             customer.Email = "tshrubsall2@sitemeter.com";
 
-            var getCart = new GetCart();
-            getCart.GetCustomerCart(customer);
+            GetCart.GetCustomerCart(customer);
 
             Assert.AreEqual(customer.Cart.Count, 3);
             Assert.AreEqual(customer.Cart.Values.Sum(), 5);
+        }
+    }
+
+    [TestClass]
+    public class TestDBUpdates
+    {
+        [TestMethod]
+        public void UpdateCustomerCartAddingAProductToCart()
+        {
+            Product product= new Product();
+            product.Name = "Prada 55WS";
+            product.Image = "/Users/kevinakerberg/git/CSCE361CapStoneG5/images/prada_55ws.png";
+            product.Category = "Fashion";
+            product.Price = 369.99;
+            product.ManufacturerInfo = "EssilorLuxottica";
+            product.Description = "Polarized universal fit sunglasses";
+            product.Height = 2;
+            product.Width = 7;
+            product.Depth = 0.1;
+            product.SKU = "ngadg8";
+            
+            var getCust = new GetCustomer();
+            
+            Customer customer = getCust.GetCustomerFromEmail("tshrubsall2@sitemeter.com");
+
+            customer.Cart.Add(product, 12);
+
+            int rows = UpdateCart.Update(customer);
+
+            Assert.AreEqual(7, rows);
+
+            customer.Cart.Remove(product);
+            foreach(var item in customer.Cart)
+            {
+                Console.WriteLine(item.Key.Name);
+            }
+            rows = UpdateCart.Update(customer);
+
+            Assert.AreEqual(7, rows);
         }
     }
 }
