@@ -56,18 +56,16 @@
 
     public class Sale
     {
-        //public double? DiscountAmount {get; set; }
+        
         public int? SaleId {get; set; }
 
         public double Discount {get; set; }
 
         public string? Category {get; set; }
-        //date format = yyyy-mm-dd
+       
         public DateTime StartDate {get; set; }
 
         public DateTime EndDate {get; set; }
-
-        //public List<Product>? Products {get; set; }
     }
 
     public class CreditCard

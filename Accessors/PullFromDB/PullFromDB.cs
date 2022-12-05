@@ -120,6 +120,7 @@ namespace Accessors.PullFromDB
             }
         }
 
+        //returns a customer object with all attribute filled except paymentMethods and Password (no need for those to be filledd in until needed for security)
         public Customer GetCustomerFromEmail(string email)
         {
             Customer customer = new Customer();
@@ -153,6 +154,7 @@ namespace Accessors.PullFromDB
                 }
                 con.Close();
             }
+            GetCart.GetCustomerCart(customer);
             return customer;
         }
     }
@@ -418,7 +420,7 @@ namespace Accessors.PullFromDB
 
     public class GetCart
     {
-        public void GetCustomerCart(Customer customer)
+        public static void GetCustomerCart(Customer customer)
         {
             customer.Cart = new Dictionary<Product, int>();
             using(SqlConnection con = DBTools.ConnectToDB())
