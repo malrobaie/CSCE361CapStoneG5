@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\reactShoppingCart",
-    "\\reactShoppingCart\\src"
+    "\\reactShoppingCart\\src",
+    "\\reactShoppingCart\\src\\Components"
   ],
-  "SelectedNode": "\\Group5OnlineStore",
+  "SelectedNode": "\\reactShoppingCart\\src\\Components\\Check.js",
   "PreviewInSolutionExplorer": false
 }
