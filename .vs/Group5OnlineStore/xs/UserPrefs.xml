@@ -1,0 +1,37 @@
+﻿<Properties StartupConfiguration="{5084326A-93D0-4AAA-B6CF-02B120F7B4EA}|Default">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Engine FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.Tests PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Tests/CartUnitTests.cs">
+    <Files>
+      <File FileName="Accessors/PullFromDB/PullFromDB.cs" Line="22" Column="45" />
+      <File FileName="DataContracts/DataContainers.cs" Line="35" Column="18" />
+      <File FileName="Engine/CartTools.cs" Line="15" Column="42" />
+      <File FileName="Engine/ProductTools.cs" Line="11" Column="44" />
+      <File FileName="Tests/CartUnitTests.cs" Line="11" Column="188" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Group5OnlineStore" expanded="True">
+            <Node name="Accessors" expanded="True">
+              <Node name="InsertIntoDB" expanded="True" />
+              <Node name="PullFromDB" expanded="True" />
+            </Node>
+            <Node name="DataContainers" expanded="True" />
+            <Node name="Engine" expanded="True" />
+            <Node name="Tests" expanded="True">
+              <Node name="CartUnitTests.cs" selected="True" />
+            </Node>
+            <Node name="Tools" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+</Properties>
