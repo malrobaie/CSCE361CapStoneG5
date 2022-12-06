@@ -12,9 +12,7 @@ const Cart = () => {
         return (cart.length === 0) ? 'Your Cart is Empty ' : 'Cart Items' + ' (' + cart.length + ') '
     }
 
-
-    return (
-
+    const renderCart = () => (
         <>
             <h3 className='text-center py-4' id='fashion'>{isEmpty(cartItems)}<img src={require('../assets/cart.png')} height='36' /></h3>
             <Row xs={4} md={4} className="g-4">
@@ -39,6 +37,13 @@ const Cart = () => {
                 ))}
             </Row>
         </>
+    )
+
+    return (
+        <div>
+            {renderCart()}
+        </div>
+
     )
 }
 
