@@ -8,7 +8,7 @@ display:flex;
 justify-content: center;
 background color:black;
   
-background-image: linear-gradient(to top , #4C66F0, #ffffff);
+background-image: linear-gradient( #f5f5f5);
   
 background-position: center;
 width: 100%;
@@ -27,14 +27,16 @@ flex-direction: column;
 justify-content: center;
 `;
 const Heading = styled.h1`
-font-size: 17px;
-color: grey;
+font-size: 19px;
+color: #1E2D7B;
+font-family: system-ui;
 align-items: center;
 justify-content: left;
 display:flex;
 padding:10px
 `;
 const User = styled.input`
+background-color: #e8f0fc;
 width: 100%;
 padding: 10px;
 margin-top:20px;
@@ -54,19 +56,19 @@ const Check = () => {
     return (
         <Container>
             <Container2>
-            <Heading>Enter Payment Information</Heading>
-                <img src={require('../assets/payment.png')} height= '60'/>
-                <Web>
-                    <User placeholder="Card Number" />
-                    <User placeholder="mm/dd/yyyy" />
-                    <User placeholder="CVV" />
+                <Heading>Enter Payment Information</Heading>
+                <img src={require('../assets/payment.png')} height='60' />
+                <Web className="pay">
+                    <User className="pay" placeholder="Card Number" />
+                    <User className="pay" placeholder="mm/dd/yyyy" />
+                    <User className="pay" placeholder="CVV" />
                     <Heading>Enter Promo code</Heading>
-                    <User placeholder="Promotion Code" />
+                    <User className="pay" placeholder="Promotion Code" />
                     <Heading>Enter Delivery Address</Heading>
-                    <User placeholder="Street Address" />
-                    <User placeholder="City" />
-                    <User placeholder="State" />
-                    <User placeholder="Zipcode" />
+                    <User className="pay" placeholder="Street Address" />
+                    <User className="pay" placeholder="City" />
+                    <User className="pay" placeholder="State" />
+                    <User className="pay" placeholder="Zipcode" />
                     <button style={{ align: "center" }} className="btn btn-white py-4" size='sm'><img src={require('../assets/checkout.png')} height='90' /></button>
                 </Web>
             </Container2>
