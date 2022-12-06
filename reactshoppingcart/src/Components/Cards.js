@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Accordion from 'react-bootstrap/Accordion';
+
 export var cartItems = new Array();
 var item = {};
 
@@ -131,85 +132,51 @@ function Cards() {
             return trendingProd.push(prod)
     })
 
+    // products.map(prod => {
+    //     if (prod.inCart === 1) {
+    //         !(cartItems.includes(prod)) ? cartItems.push(prod) : cartItems[cartItems.indexOf(prod)].quantity++
+    //     }
+    //    console.log(cartItems.length)
+    // })
 
-    
-    products.forEach(prod => {
-        if (prod.inCart === 1) {
-            !(cartItems.includes(prod)) ? cartItems.push(prod): cartItems[cartItems.indexOf(prod)].quantity++  
+    for (let i = 0; i < products.length; i++) {
+        if (products[i].inCart === 1 && !(cartItems.includes(products[i]))) {
+            cartItems.push(products[i])
         }
-       console.log(cartItems.length)
-    })
+    }
 
+    const renderProducts = (category, title) => (<>
+        <h3 className='text-center py-4' id='fashion'>{title}</h3>
+        <Row xs={4} md={4} className="g-4">
+
+            {category.map((product) => (
+
+                <Col className='products'>
+                    <Card>
+                        {product.image}
+                        <Card.Body>
+                            <Card.Title>{product.title}</Card.Title>
+                            <h1 className='price'>{product.price}</h1>
+                            <Accordion>
+                                <Accordion.Header>Description</Accordion.Header>
+                                <Accordion.Body>{product.description}</Accordion.Body>
+                            </Accordion>
+                        </Card.Body>
+                        <button onClick={() => { inCart(product) }} className="btn btn-clear ms-2" >Add to Cart<img src={require("../assets/cart.png")} height='33px' /></button>
+                    </Card>
+                </Col>
+            ))}
+        </Row>
+    </>)
+
+
+   
 
     return (
         <div>
-
-            <h3 className='text-center py-4' id='fashion'>Fashion</h3>
-            <Row xs={4} md={4} className="g-4">
-
-                {fashionProd.map((product) => (
-
-                    <Col className='products'>
-                        <Card>
-                            {product.image}
-                            <Card.Body>
-                                <Card.Title>{product.title}</Card.Title>
-                                <h1 className='price'>{product.price}</h1>
-                                <Accordion>
-                                    <Accordion.Header>Description</Accordion.Header>
-                                    <Accordion.Body>{product.description}</Accordion.Body>
-                                </Accordion>
-                            </Card.Body>
-                            <button onClick={() => { inCart(product) }} className="btn btn-clear ms-2" >Add to Cart<img src={require("../assets/cart.png")} height='33px' /></button>
-                        </Card>
-                    </Col>
-                ))}
-            </Row>
-
-            <h3 className='text-center py-4' id='tech'>Tech</h3>
-            <Row xs={4} md={4} className="g-4">
-
-                {techProd.map((product) => (
-
-                    <Col>
-                        <Card>
-                            {product.image}
-                            <Card.Body>
-                                <Card.Title>{product.title}</Card.Title>
-                                <h1 className='price'>{product.price}</h1>
-                                <Accordion>
-                                    <Accordion.Header>Description</Accordion.Header>
-                                    <Accordion.Body>{product.description}</Accordion.Body>
-                                </Accordion>
-                            </Card.Body>
-                            <button onClick={() => { inCart(product) }} className="btn btn-clear ms-2" >Add to Cart<img src={require("../assets/cart.png")} height='33px' /></button>
-                        </Card>
-                    </Col>
-                ))}
-            </Row>
-
-            <h3 className='text-center py-4' id='trending'>Trending</h3>
-            <Row xs={4} md={4} className="g-4">
-
-                {trendingProd.map((product) => (
-
-                    <Col>
-                        <Card>
-                            {product.image}
-                            <Card.Body>
-                                <Card.Title>{product.title}</Card.Title>
-                                <h1 className='price'>{product.price}</h1>
-                                <Accordion>
-                                    <Accordion.Header>Description</Accordion.Header>
-                                    <Accordion.Body>{product.description}</Accordion.Body>
-                                </Accordion>
-                            </Card.Body>
-                            <button onClick={() => { inCart(product) }} className="btn btn-clear ms-2" >Add to Cart<img src={require("../assets/cart.png")} height='33px' /></button>
-                        </Card>
-                    </Col>
-                ))}
-            </Row>
-
+            {renderProducts(fashionProd, 'Fashion')}
+            {renderProducts(techProd, 'Tech')}
+            {renderProducts(trendingProd, 'Trending')}
         </div>
 
     );
