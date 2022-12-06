@@ -3,7 +3,9 @@ import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Accordion from 'react-bootstrap/Accordion';
-export var cartItems = []
+export var cartItems = new Array();
+var item = {};
+
 
 
 function Cards() {
@@ -13,11 +15,11 @@ function Cards() {
     const trending = 'trending'
 
 
-
-
     const [products] = useState([
         {
             id: 1,
+            inCart: 0,
+            quantity: 0,
             category: fashion,
             image: <img variant='top' src={require('../assets/item1.jpg')} />,
             title: 'Nike Hat1',
@@ -27,6 +29,8 @@ function Cards() {
         },
         {
             id: 1,
+            inCart: 0,
+            quantity: 0,
             category: fashion,
             image: <img variant='top' src={require('../assets/item1.jpg')} />,
             title: 'Nike Hat2',
@@ -36,6 +40,8 @@ function Cards() {
         },
         {
             id: 1,
+            inCart: 0,
+            quantity: 0,
             category: fashion,
             image: <img variant='top' src={require('../assets/item1.jpg')} />,
             title: 'Nike Hat3',
@@ -45,6 +51,8 @@ function Cards() {
         },
         {
             id: 1,
+            inCart: 0,
+            quantity: 0,
             category: fashion,
             image: <img variant='top' src={require('../assets/item1.jpg')} />,
             title: 'Nike Hat4',
@@ -54,6 +62,8 @@ function Cards() {
         },
         {
             id: 1,
+            inCart: 0,
+            quantity: 0,
             category: tech,
             image: <img variant='top' src={require('../assets/item1.jpg')} />,
             title: 'Nike Hat5',
@@ -63,6 +73,8 @@ function Cards() {
         },
         {
             id: 1,
+            inCart: 0,
+            quantity: 0,
             category: tech,
             image: <img variant='top' src={require('../assets/item1.jpg')} />,
             title: 'Nike Hat6',
@@ -72,6 +84,8 @@ function Cards() {
         },
         {
             id: 1,
+            inCart: 0,
+            quantity: 0,
             category: trending,
             image: <img variant='top' src={require('../assets/item1.jpg')} />,
             title: 'Nike Hat7',
@@ -81,6 +95,8 @@ function Cards() {
         },
         {
             id: 1,
+            inCart: 0,
+            quantity: 0,
             category: trending,
             image: <img variant='top' src={require('../assets/item1.jpg')} />,
             title: 'Nike Hat8',
@@ -91,12 +107,19 @@ function Cards() {
 
     ]);
 
+    function inCart(product) {
+        console.log(product.inCart + " before")
+        product.inCart = 1
+        console.log(product.inCart + " after")
+
+
+    }
+
+
+
     const fashionProd = []
     const techProd = []
     const trendingProd = []
-
-
-
 
 
     products.map(prod => {
@@ -107,12 +130,16 @@ function Cards() {
         if (prod.category === trending)
             return trendingProd.push(prod)
     })
-    
-    const addToCart = (product) => {
-        cartItems.push(product)
-    }
 
-    useState(cartItems)
+
+    
+    products.forEach(prod => {
+        if (prod.inCart === 1) {
+            !(cartItems.includes(prod)) ? cartItems.push(prod): cartItems[cartItems.indexOf(prod)].quantity++  
+        }
+       console.log(cartItems.length)
+    })
+
 
     return (
         <div>
@@ -133,9 +160,7 @@ function Cards() {
                                     <Accordion.Body>{product.description}</Accordion.Body>
                                 </Accordion>
                             </Card.Body>
-                            <Card.Footer>
-                                <button onClick={() => addToCart(product)} className="btn btn-clear ms-2" >Add to Cart<img src={require("../assets/cart.png")} height='33px' /></button>
-                            </Card.Footer>
+                            <button onClick={() => { inCart(product) }} className="btn btn-clear ms-2" >Add to Cart<img src={require("../assets/cart.png")} height='33px' /></button>
                         </Card>
                     </Col>
                 ))}
@@ -157,9 +182,7 @@ function Cards() {
                                     <Accordion.Body>{product.description}</Accordion.Body>
                                 </Accordion>
                             </Card.Body>
-                            <Card.Footer>
-                                <button onClick={() => addToCart(product)} className="btn btn-clear ms-2" >Add to Cart<img src={require("../assets/cart.png")} height='33px' /></button>
-                            </Card.Footer>
+                            <button onClick={() => { inCart(product) }} className="btn btn-clear ms-2" >Add to Cart<img src={require("../assets/cart.png")} height='33px' /></button>
                         </Card>
                     </Col>
                 ))}
@@ -181,9 +204,7 @@ function Cards() {
                                     <Accordion.Body>{product.description}</Accordion.Body>
                                 </Accordion>
                             </Card.Body>
-                            <Card.Footer>
-                                <button onClick={() => addToCart(product)} className="btn btn-clear ms-2" >Add to Cart<img src={require("../assets/cart.png")} height='33px' /></button>
-                            </Card.Footer>
+                            <button onClick={() => { inCart(product) }} className="btn btn-clear ms-2" >Add to Cart<img src={require("../assets/cart.png")} height='33px' /></button>
                         </Card>
                     </Col>
                 ))}
