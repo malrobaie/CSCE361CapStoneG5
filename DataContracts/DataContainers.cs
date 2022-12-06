@@ -1,12 +1,7 @@
-﻿using Microsoft.AspNetCore.Identity;
-using System.ComponentModel.DataAnnotations;
-
-namespace DataContainers
+﻿namespace DataContainers
 {
     public class Customer
     {
-        public long CustomerId {get; set; }
-
         public string LastName { get; set; }
 
         public string FirstName { get; set; }
@@ -15,16 +10,15 @@ namespace DataContainers
 
         public string Email {get; set; }
         
-        public Address? Address {get; set; }
+        public Address Address {get; set; }
         
-        public List<CreditCard>? PaymentMethods {get; set; }
+        public List<CreditCard>? paymentMethods {get; set; }
         
-        public List<Product>? Cart {get; set; }
+        public Dictionary<Product, int>? Cart {get; set; }
     }
-    public class Address
-    {
-        public int Number {get; set; }
 
+    public class Address
+    { 
         public string Street {get; set; }
 
         public string City {get; set; }
@@ -33,79 +27,58 @@ namespace DataContainers
 
         public string ZipCode {get; set; }
 
-        public string? Country {get; set; }
+        public string Country {get; set; }
     }
 
     public class Product
     {
-        public int ProductId {get; set; }
-
         public string Name {get; set; }
+
+        public String Image {get; set; }
+
+        public double Price {get; set; }
 
         public string? Description {get; set; }
 
         public string? ManufacturerInfo {get; set; }
 
-        public double? Weight {get; set; }
+        public double Depth {get; set; }
 
-        public double? Rating {get; set; }
+        public double Height {get; set; }
 
-        public Dimensions? Dimensions {get; set; }
+        public double Width {get; set; }
 
         public string? SKU {get; set; }
 
         public string? Category {get; set; }
 
-        public List<string>? Images {get; set; }
-
-        public Sale? Sale {get; set; }
-
-    }
-
-    public class Dimensions
-    {
-        public double Length {get; set; }
-
-        public double Height {get; set; }
-
-        public double Width {get; set; }
     }
 
     public class Sale
     {
-        public int SaleId {get; set; }
+        
+        public int? SaleId {get; set; }
 
-        public double? DiscountAmount {get; set; }
-
-        public double? DiscountPercent {get; set; }
+        public double Discount {get; set; }
 
         public string? Category {get; set; }
+       
+        public DateTime StartDate {get; set; }
 
-        public DateOnly StartDate {get; set; }
-
-        public DateOnly EndDate {get; set; }
-
-        public List<Product>? Products {get; set; }
+        public DateTime EndDate {get; set; }
     }
 
     public class CreditCard
     {
-        public int CreditId {get;}
-
-        public string CreditName {get;}
+        public string CreditName {get; set; }
         
-        public string CreditType {get;}
+        public string CreditType {get; set;}
         
-        public DateOnly ExperationDate {get; set; }
+        public string ExperationDate {get; set; }
 
-        public CreditCardAttribute CreditNumber {get;}
+        public double CreditNumber {get; set; }
 
         public int? CVV {get; set;}
 
-    }
-
-    public class ApplicationUser : IdentityUser
-    {
-        
     }
 }

@@ -1,10 +1,16 @@
 {
   "ExpandedNodes": [
+<<<<<<< HEAD
     "",
     "\\reactShoppingCart",
     "\\reactShoppingCart\\src",
     "\\reactShoppingCart\\src\\Components"
   ],
   "SelectedNode": "\\reactShoppingCart\\src\\Components\\Check.js",
+=======
+    ""
+  ],
+  "SelectedNode": "\\Group5OnlineStore.sln",
+>>>>>>> 9a8dea155429ccd45798b95e04a1fc99705c6893
   "PreviewInSolutionExplorer": false
 }
