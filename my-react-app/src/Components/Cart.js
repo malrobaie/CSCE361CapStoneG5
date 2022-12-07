@@ -19,8 +19,8 @@ const Cart = () => {
 
                 {cartItems.map((product) => (
 
-                    <Col>
-                        <Card>
+                    <Col >
+                        <Card >
                             {product.image}
                             <Card.Body>
                                 <Card.Title>{product.title}</Card.Title>
@@ -40,7 +40,7 @@ const Cart = () => {
     )
 
     return (
-        <div>
+        <div id = 'cart'>
             {renderCart()}
         </div>
 

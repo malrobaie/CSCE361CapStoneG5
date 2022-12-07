@@ -146,7 +146,7 @@ function Cards() {
     }
 
     const renderProducts = (category, title) => (<>
-        <h3 className='text-center py-4' id='fashion'>{title}</h3>
+        <h3 className='text-center py-4' id= {title}>{title}</h3>
         <Row xs={4} md={4} className="g-4">
 
             {category.map((product) => (
