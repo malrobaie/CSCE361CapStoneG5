@@ -31,7 +31,7 @@ const Cart = () => {
                                     <Accordion.Body>{product.description}</Accordion.Body>
                                 </Accordion>
                             </Card.Body>
-
+                            <button className="btn btn-clear ms-2"><img src={require("../assets/remove.png")} height='50px' /></button>
                         </Card>
                     </Col>
                 ))}
@@ -40,7 +40,7 @@ const Cart = () => {
     )
 
     return (
-        <div id = 'cart'>
+        <div id='cart'>
             {renderCart()}
         </div>
 

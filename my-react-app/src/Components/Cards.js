@@ -136,7 +136,7 @@ function Cards() {
     //     if (prod.inCart === 1) {
     //         !(cartItems.includes(prod)) ? cartItems.push(prod) : cartItems[cartItems.indexOf(prod)].quantity++
     //     }
-    //    console.log(cartItems.length)
+        console.log(cartItems.length)
     // })
 
     for (let i = 0; i < products.length; i++) {
