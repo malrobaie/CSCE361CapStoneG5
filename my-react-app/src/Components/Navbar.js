@@ -19,13 +19,13 @@ export default function Navbar() {
                                 <a class="nav-link active" aria-current="page" href="#home">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#fashion">Fashion</a>
+                                <a class="nav-link" href="#Fashion">Fashion</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#tech">Tech</a>
+                                <a class="nav-link" href="#Tech">Tech</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#trending">Trending</a>
+                                <a class="nav-link" href="#Trending">Trending</a>
                             </li>
 
                         </ul>
