@@ -45,7 +45,8 @@ create table Customer (
     customerId int IDENTITY(1,1) PRIMARY KEY NOT NULL,
     lastName varchar(255) NOT NULL,
     firstName varchar(255) NOT NULL,
-    email varchar(255) NOT NULL UNIQUE
+    email varchar(255) NOT NULL UNIQUE,
+    password varchar(255) NOT NULL
 );
 
 alter table Customer
