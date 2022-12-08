@@ -31,7 +31,7 @@ const Cart = () => {
                                     <Accordion.Body>{product.description}</Accordion.Body>
                                 </Accordion>
                             </Card.Body>
-                            <button className="btn btn-clear ms-2"><img src={require("../assets/remove.png")} height='50px' /></button>
+                            <button onClick={() => product.inCart = 0} className="btn btn-clear ms-2"><img src={require("../assets/remove.png")} height='50px' /></button>
                         </Card>
                     </Col>
                 ))}
