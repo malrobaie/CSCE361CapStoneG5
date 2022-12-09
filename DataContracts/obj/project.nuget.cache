@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VQCkqlv2LNP+AlCd0ZeCKu4vkSi5aweG7rJfTDSfgPAHMyJ4xc7MzEwyF5vu8jIhxx7Oksj74LE6Sp8KZzIFXw==",
+  "dgSpecHash": "89/oXDEeRHJC7eZBFmc6Chz6VX1JonfQgGQTHtFxFvSwBJ+yUcXvW4KrXmGBM/OOzA7Koy51MkMnln2Od+LkSg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\DataContracts\\DataContainers.csproj",
+  "projectFilePath": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG59001\\DataContracts\\DataContainers.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jeffl\\.nuget\\packages\\fontawesome\\4.7.0\\fontawesome.4.7.0.nupkg.sha512",
     "C:\\Users\\jeffl\\.nuget\\packages\\ht.components\\6.0.6\\ht.components.6.0.6.nupkg.sha512",
