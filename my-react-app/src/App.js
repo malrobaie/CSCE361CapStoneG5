@@ -5,15 +5,18 @@ import Carousel from './Components/Carousel';
 import Cards from './Components/Cards';
 import Login from './Components/Login'
 import Cart from './Components/Cart';
+import Check from './Components/Check'
 
 export default function App() {
+
     return (
         <>
             <Navbar />
-            <Carousel />
+             <Carousel />
             <Cards />
             <Login />
             <Cart />
+            <Check />
         </>
     );
 }
