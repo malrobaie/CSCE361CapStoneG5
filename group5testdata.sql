@@ -20,11 +20,11 @@ insert into Address(street,city,zipCode,stateId,countryId) values ('660 Rowland 
 insert into Address(street,city,zipCode,stateId,countryId) values ('1099 Barnett Avenue','Columbus', '43204', 5, 1);
 
 -- Insert test customer
-insert into Customer(lastName, firstName, addressId, email) values ('Shrubsall', 'Trudey', 1, 'tshrubsall2@sitemeter.com');
-insert into Customer(lastName, firstName, addressId, email) values ('Blakeston', 'Millard', 2, 'mblakeston@businessinsider.com');
-insert into Customer(lastName, firstName, addressId, email) values ('Dellenbrook', 'Bobine', 3, 'dellenbrook3@yahoo.com');
-insert into Customer(lastName, firstName, addressId, email) values ('Arondel', 'Nick', 4, 'bm@ibm.com');
-insert into Customer(lastName, firstName, addressId, email) values ('Abbey', 'Jennilee', 5, 'jennileea@cse.unl.edu');
+insert into Customer(lastName, firstName, addressId, email, password) values ('Shrubsall', 'Trudey', 1, 'tshrubsall2@sitemeter.com', '');
+insert into Customer(lastName, firstName, addressId, email, password) values ('Blakeston', 'Millard', 2, 'mblakeston@businessinsider.com', '');
+insert into Customer(lastName, firstName, addressId, email, password) values ('Dellenbrook', 'Bobine', 3, 'dellenbrook3@yahoo.com', '');
+insert into Customer(lastName, firstName, addressId, email, password) values ('Arondel', 'Nick', 4, 'bm@ibm.com', '');
+insert into Customer(lastName, firstName, addressId, email, password) values ('Abbey', 'Jennilee', 5, 'jennileea@cse.unl.edu', '');
 
 
 -- Insert test credit card
