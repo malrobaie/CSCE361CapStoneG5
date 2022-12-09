@@ -1,4 +1,6 @@
-﻿namespace DataContainers
+﻿using Microsoft.AspNetCore.Identity;
+
+namespace DataContainers
 {
     public class Customer
     {
@@ -6,7 +8,7 @@
 
         public string FirstName { get; set; }
 
-        public string Password {get; set; }
+        public string Password {get; set; } = "Password";
 
         public string Email {get; set; }
         

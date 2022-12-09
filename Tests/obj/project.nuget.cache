@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RfpDBMpcziO6VpWy9czG8mxKcjK19IoIl0307RPbfxyqhcMjS6RR910hcMtxnpCDjPPSETXKNHsTiBI5U4xIag==",
+  "dgSpecHash": "vjCmrw1ohMg6zIhCNgX+w4U2rhnKrOFYCFRXjpkjmhF2B8REgq+pEiK5e+G79OIxQ2vxLk1fXU1/VTut4bAm6A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\Tests\\Tests.csproj",
+  "projectFilePath": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG59001\\Tests\\Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\jeffl\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\jeffl\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

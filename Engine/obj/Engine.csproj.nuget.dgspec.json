@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\Engine\\Engine.csproj": {}
+    "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG59001\\Engine\\Engine.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\Accessors\\Accessors.csproj": {
+    "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG59001\\Accessors\\Accessors.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\Accessors\\Accessors.csproj",
+        "projectUniqueName": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG59001\\Accessors\\Accessors.csproj",
         "projectName": "Accessors",
-        "projectPath": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\Accessors\\Accessors.csproj",
+        "projectPath": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG59001\\Accessors\\Accessors.csproj",
         "packagesPath": "C:\\Users\\jeffl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\Accessors\\obj\\",
+        "outputPath": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG59001\\Accessors\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,11 +33,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\DataContracts\\DataContainers.csproj": {
-                "projectPath": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\DataContracts\\DataContainers.csproj"
+              "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG59001\\DataContracts\\DataContainers.csproj": {
+                "projectPath": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG59001\\DataContracts\\DataContainers.csproj"
               },
-              "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\Tools\\Tools.csproj": {
-                "projectPath": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\Tools\\Tools.csproj"
+              "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG59001\\Tools\\Tools.csproj": {
+                "projectPath": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG59001\\Tools\\Tools.csproj"
               }
             }
           }
@@ -85,14 +85,14 @@
         }
       }
     },
-    "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\DataContracts\\DataContainers.csproj": {
+    "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG59001\\DataContracts\\DataContainers.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\DataContracts\\DataContainers.csproj",
+        "projectUniqueName": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG59001\\DataContracts\\DataContainers.csproj",
         "projectName": "DataContainers",
-        "projectPath": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\DataContracts\\DataContainers.csproj",
+        "projectPath": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG59001\\DataContracts\\DataContainers.csproj",
         "packagesPath": "C:\\Users\\jeffl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\DataContracts\\obj\\",
+        "outputPath": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG59001\\DataContracts\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -163,14 +163,14 @@
         }
       }
     },
-    "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\Engine\\Engine.csproj": {
+    "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG59001\\Engine\\Engine.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\Engine\\Engine.csproj",
+        "projectUniqueName": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG59001\\Engine\\Engine.csproj",
         "projectName": "Engine",
-        "projectPath": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\Engine\\Engine.csproj",
+        "projectPath": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG59001\\Engine\\Engine.csproj",
         "packagesPath": "C:\\Users\\jeffl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\Engine\\obj\\",
+        "outputPath": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG59001\\Engine\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -192,11 +192,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\Accessors\\Accessors.csproj": {
-                "projectPath": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\Accessors\\Accessors.csproj"
+              "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG59001\\Accessors\\Accessors.csproj": {
+                "projectPath": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG59001\\Accessors\\Accessors.csproj"
               },
-              "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\DataContracts\\DataContainers.csproj": {
-                "projectPath": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\DataContracts\\DataContainers.csproj"
+              "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG59001\\DataContracts\\DataContainers.csproj": {
+                "projectPath": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG59001\\DataContracts\\DataContainers.csproj"
               }
             }
           }
@@ -230,14 +230,14 @@
         }
       }
     },
-    "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\Tools\\Tools.csproj": {
+    "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG59001\\Tools\\Tools.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\Tools\\Tools.csproj",
+        "projectUniqueName": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG59001\\Tools\\Tools.csproj",
         "projectName": "Tools",
-        "projectPath": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\Tools\\Tools.csproj",
+        "projectPath": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG59001\\Tools\\Tools.csproj",
         "packagesPath": "C:\\Users\\jeffl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\Tools\\obj\\",
+        "outputPath": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG59001\\Tools\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -259,8 +259,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\DataContracts\\DataContainers.csproj": {
-                "projectPath": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG5\\DataContracts\\DataContainers.csproj"
+              "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG59001\\DataContracts\\DataContainers.csproj": {
+                "projectPath": "C:\\Users\\jeffl\\Source\\Repos\\CSCE361CapStoneG59001\\DataContracts\\DataContainers.csproj"
               }
             }
           }
