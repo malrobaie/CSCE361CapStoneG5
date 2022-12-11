@@ -8,13 +8,18 @@ import { cartItems } from './Cards'
 
 
 const Cart = () => {
+    var total = 0
+
     const isEmpty = (cart) => {
-        return (cart.length === 0) ? 'Your Cart is Empty ' : 'Cart Items' + ' (' + cart.length + ') '
+        cart.forEach(prod => {
+            total += prod.quantity*(prod.price + .0725*prod.price)  ;  
+            });
+        return (cart.length === 0) ? 'Your Cart is Empty ' : 'Cart Items' + ' (' + cart.length + ') '+' Total: $'+ total.toFixed(2)
     }
 
     const renderCart = () => (
         <>
-            <h3 className='text-center py-4' id='fashion'>{isEmpty(cartItems)}<img src={require('../assets/cart.png')} height='36' /></h3>
+            <h3 className='text-center py-4'><img src={require('../assets/cart.png')} height='36' />{isEmpty(cartItems)}</h3>
             <Row xs={4} md={4} className="g-4">
 
                 {cartItems.map((product) => (
@@ -25,7 +30,7 @@ const Cart = () => {
                             <Card.Body>
                                 <Card.Title>{product.title}</Card.Title>
                                 <Card.Subtitle>Quantity: {product.quantity}</Card.Subtitle>
-                                <h1 className='price'>{product.price}</h1>
+                                <h1 className='price'>${product.price}</h1>
                                 <Accordion>
                                     <Accordion.Header>Description</Accordion.Header>
                                     <Accordion.Body>{product.description}</Accordion.Body>
