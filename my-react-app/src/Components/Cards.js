@@ -15,7 +15,7 @@ function Cards() {
     const tech = 'tech'
     const trending = 'trending'
 
-
+    // array of products
     const [products] = useState([
         {
             id: 1,
@@ -196,19 +196,15 @@ function Cards() {
 
     ]);
 
+    // adjusting quantity
     function inCart(product) {
-        console.log(product.inCart + " before")
         product.inCart = 1
         if (product.inCart != 0)
             product.quantity++
-
-        console.log(product.inCart + " after")
-
-
     }
     
 
-
+    // filtering categories
     const fashionProd = []
     const techProd = []
     const trendingProd = []
@@ -223,13 +219,12 @@ function Cards() {
             return trendingProd.push(prod)
     })
 
-  
-   // console.log(cartItems.length)
-
+    // adding to cart
     products.forEach(prod => {
         if (prod.inCart === 1 && !(cartItems.includes(prod))) { cartItems.push(prod) }
     })
-
+    
+    // rendering cards
     const renderProducts = (category, title) => (<>
         <h3 className='text-center py-4' id={title}>{title}</h3>
         <Row xs={4} md={4} className="g-4">

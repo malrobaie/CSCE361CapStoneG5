@@ -12,7 +12,7 @@ export default function App() {
     return (
         <>
             <Navbar />
-             <Carousel />
+            <Carousel />
             <Cards />
             <Login />
             <Cart />

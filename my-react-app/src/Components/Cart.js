@@ -10,6 +10,7 @@ import { cartItems } from './Cards'
 const Cart = () => {
     var total = 0
 
+    // displaying total items and price+tax
     const isEmpty = (cart) => {
         cart.forEach(prod => {
             total += prod.quantity*(prod.price + .0725*prod.price)  ;  
@@ -17,6 +18,7 @@ const Cart = () => {
         return (cart.length === 0) ? 'Your Cart is Empty ' : 'Cart Items' + ' (' + cart.length + ') '+' Total: $'+ total.toFixed(2)
     }
 
+    // rendering cart item cards
     const renderCart = () => (
         <>
             <h3 className='text-center py-4'><img src={require('../assets/cart.png')} height='36' />{isEmpty(cartItems)}</h3>

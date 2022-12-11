@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
-import Cards from './Cards'
-// import Cart from './Cart'
 
 export default function Navbar() {
 
-
+// bootstrap navbar, category filters, and page buttons
     return (
         <div id='home'>
             <nav class="navbar navbar-expand-lg">
