@@ -166,7 +166,7 @@ function Cards() {
             quantity: 0,
             category: trending,
             image: <img variant='top' src={require('../assets/item14.jpg')} />,
-            title: 'HP Envy Inspire 7955e Wireless Printer',
+            title: 'HP Envy Inspire Printer',
             price: 96.99,
             description: "HP Envy Inspire 7955e Wireless Color All-in-One Printer with Bonus 6 Months Instant Ink with HP+"
 
