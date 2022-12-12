@@ -3,24 +3,23 @@
  * cart object in the online cart program
  */
 
+using Accessors.PullFromDB;
 using DataContainers;
 namespace Engine
 {
 	public class CartTools
 	{
-		public double? getCartTotal(Cart cart) {
+		public double getCartTotal(String email) {
             double total = 0;
-			List<Product> products = cart.getProducts(); // have to ask how we are storing the cart data in C#, this assumes a cart will have a list of products that can be retrieved with a getter
 
-			var productTools = new ProductTools();
+            var newCust = new GetCustomer();
+            Customer customer = newCust.GetCustomerFromEmail(email);
+            GetCart.GetCustomerCart(customer);
 
-			for(int i=0; i<products.Count; i++) {
-                productTools.setSalePrice(products[i]);
-				total += products[i].Price;
-			}
-
-			double tax = total * 0.08;
-			total += tax;
+            foreach (var p in customer.Cart)
+            {
+                total += p.Value * p.Key.Price;
+            }
 
             return total;
         }

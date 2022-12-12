@@ -1,0 +1,5 @@
+/Users/kevinakerberg/git/CSCE361CapStoneG5/Engine/obj/Debug/net7.0/Engine.csproj.AssemblyReference.cache
+/Users/kevinakerberg/git/CSCE361CapStoneG5/Engine/obj/Debug/net7.0/Engine.GeneratedMSBuildEditorConfig.editorconfig
+/Users/kevinakerberg/git/CSCE361CapStoneG5/Engine/obj/Debug/net7.0/Engine.AssemblyInfoInputs.cache
+/Users/kevinakerberg/git/CSCE361CapStoneG5/Engine/obj/Debug/net7.0/Engine.AssemblyInfo.cs
+/Users/kevinakerberg/git/CSCE361CapStoneG5/Engine/obj/Debug/net7.0/Engine.csproj.CoreCompileInputs.cache
